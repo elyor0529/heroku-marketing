@@ -7,7 +7,7 @@ import java.util.Collection;
  * Created by elyor on 8/29/2015.
  */
 @Entity
-@Table(name = "companies", schema = "public", catalog = "marketing")
+@Table(name = "companies", schema = "public", catalog = "d3pc16rn0l88v9")
 public class CompaniesEntity {
     private int id;
     private String name;
@@ -127,9 +127,8 @@ public class CompaniesEntity {
         if (siteUrl != null ? !siteUrl.equals(that.siteUrl) : that.siteUrl != null) return false;
         if (privacyPolicy != null ? !privacyPolicy.equals(that.privacyPolicy) : that.privacyPolicy != null)
             return false;
-        if (phone != null ? !phone.equals(that.phone) : that.phone != null) return false;
+        return !(phone != null ? !phone.equals(that.phone) : that.phone != null);
 
-        return true;
     }
 
     @Override

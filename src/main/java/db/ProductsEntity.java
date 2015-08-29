@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by elyor on 8/29/2015.
  */
 @Entity
-@Table(name = "products", schema = "public", catalog = "marketing")
+@Table(name = "products", schema = "public", catalog = "d3pc16rn0l88v9")
 public class ProductsEntity {
     private int id;
     private String photoUrl;
@@ -88,9 +88,8 @@ public class ProductsEntity {
         if (companyId != that.companyId) return false;
         if (photoUrl != null ? !photoUrl.equals(that.photoUrl) : that.photoUrl != null) return false;
         if (description != null ? !description.equals(that.description) : that.description != null) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        return !(name != null ? !name.equals(that.name) : that.name != null);
 
-        return true;
     }
 
     @Override

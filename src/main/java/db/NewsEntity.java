@@ -7,7 +7,7 @@ import java.sql.Timestamp;
  * Created by elyor on 8/29/2015.
  */
 @Entity
-@Table(name = "news", schema = "public", catalog = "marketing")
+@Table(name = "news", schema = "public", catalog = "d3pc16rn0l88v9")
 public class NewsEntity {
     private int id;
     private String photoUrl;
@@ -101,9 +101,8 @@ public class NewsEntity {
         if (modifiedDate != null ? !modifiedDate.equals(that.modifiedDate) : that.modifiedDate != null) return false;
         if (createdDate != null ? !createdDate.equals(that.createdDate) : that.createdDate != null) return false;
         if (content != null ? !content.equals(that.content) : that.content != null) return false;
-        if (title != null ? !title.equals(that.title) : that.title != null) return false;
+        return !(title != null ? !title.equals(that.title) : that.title != null);
 
-        return true;
     }
 
     @Override

@@ -7,7 +7,7 @@ import java.sql.Timestamp;
  * Created by elyor on 8/29/2015.
  */
 @Entity
-@Table(name = "users", schema = "public", catalog = "marketing")
+@Table(name = "users", schema = "public", catalog = "d3pc16rn0l88v9")
 public class UsersEntity {
     private int id;
     private String fullName;
@@ -101,9 +101,8 @@ public class UsersEntity {
         if (fullName != null ? !fullName.equals(that.fullName) : that.fullName != null) return false;
         if (email != null ? !email.equals(that.email) : that.email != null) return false;
         if (gender != null ? !gender.equals(that.gender) : that.gender != null) return false;
-        if (birthday != null ? !birthday.equals(that.birthday) : that.birthday != null) return false;
+        return !(birthday != null ? !birthday.equals(that.birthday) : that.birthday != null);
 
-        return true;
     }
 
     @Override

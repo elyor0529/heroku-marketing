@@ -4,12 +4,21 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:postgresql://localhost:5432/marketing</property>
-        <property name="connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-        <property name="connection.username">postgres</property>
-        <property name="connection.password">web@1234</property>
-        <property name="hbm2ddl.auto">update</property>
+        <property name="connection.url">
+            jdbc:postgresql://ec2-54-83-58-191.compute-1.amazonaws.com:5432/d3pc16rn0l88v9?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory
+        </property>
+        <property name="connection.driver_class">
+            org.postgresql.Driver
+        </property>
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.PostgreSQLDialect
+        </property>
+        <property name="connection.username">
+            fqzqaaiowbedog
+        </property>
+        <property name="connection.password">
+            rHCGFQPquL3cfZN9zzQHC4vYNM
+        </property>
         <mapping resource="mapping/CompaniesEntity.hbm.xml"/>
         <mapping class="db.CompaniesEntity"/>
         <mapping resource="mapping/DevicesEntity.hbm.xml"/>
