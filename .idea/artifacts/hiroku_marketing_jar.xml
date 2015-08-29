@@ -2,7 +2,7 @@
   <artifact type="jar" build-on-make="true" name="hiroku-marketing:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/hiroku_marketing_jar</output-path>
     <root id="archive" name="hiroku-marketing.jar">
-      <element id="module-output" name="hiroku-marketing" />
+      <element id="module-output" name="heroku-marketing" />
       <element id="extracted-dir" path="C:/tmp/libs/common/commons-lang3-3.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="C:/tmp/libs/postgresql/postgresql-9.4-1201.jdbc4.jar" path-in-jar="/" />
       <element id="extracted-dir" path="C:/tmp/libs/jsp/javax.ejb.jar" path-in-jar="/" />

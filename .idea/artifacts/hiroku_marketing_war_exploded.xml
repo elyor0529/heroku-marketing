@@ -4,7 +4,7 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="hiroku-marketing" />
+          <element id="module-output" name="heroku-marketing" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="jsp" />
@@ -14,7 +14,7 @@
           <element id="library" level="project" name="json" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="hiroku-marketing/web/Web" />
+      <element id="javaee-facet-resources" facet="heroku-marketing/web/Web" />
     </root>
   </artifact>
 </component>

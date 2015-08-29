@@ -22,10 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="heroku-marketing" />
         <module name="hiroku-marketing" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="heroku-marketing" target="1.5" />
       <module name="hiroku-marketing" target="1.5" />
     </bytecodeTargetLevel>
   </component>

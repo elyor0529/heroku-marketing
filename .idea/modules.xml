@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/hiroku-marketing.iml" filepath="$PROJECT_DIR$/hiroku-marketing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heroku-marketing.iml" filepath="$PROJECT_DIR$/heroku-marketing.iml" />
     </modules>
   </component>
 </project>
