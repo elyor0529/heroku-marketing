@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" build-on-make="true" name="hiroku-marketing:war">
-    <output-path>$PROJECT_DIR$/out/artifacts/hiroku_marketing_war</output-path>
-    <root id="archive" name="hiroku-marketing_war.war">
-      <element id="artifact" artifact-name="hiroku-marketing:war exploded" />
-    </root>
-  </artifact>
-</component>

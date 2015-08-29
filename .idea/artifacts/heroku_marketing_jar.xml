@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="hiroku-marketing:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/hiroku_marketing_jar</output-path>
+  <artifact type="jar" build-on-make="true" name="heroku-marketing:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/heroku_marketing_jar</output-path>
     <root id="archive" name="hiroku-marketing.jar">
       <element id="module-output" name="heroku-marketing" />
       <element id="extracted-dir" path="C:/tmp/libs/common/commons-lang3-3.0.jar" path-in-jar="/" />
