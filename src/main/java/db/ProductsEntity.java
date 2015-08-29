@@ -14,7 +14,6 @@ public class ProductsEntity {
     private String name;
     private int mark;
     private int companyId;
-    private CompaniesEntity companiesByCompanyId;
 
     @Id
     @Column(name = "id", nullable = false, insertable = true, updatable = true)

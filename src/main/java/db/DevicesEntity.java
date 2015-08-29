@@ -1,7 +1,6 @@
 package db;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 /**
  * Created by elyor on 8/29/2015.
@@ -15,7 +14,6 @@ public class DevicesEntity {
     private String token;
     private String companyKey;
     private String uniqueId;
-    private Collection<UsersEntity> usersesById;
 
     @Id
     @Column(name = "id", nullable = false, insertable = true, updatable = true)

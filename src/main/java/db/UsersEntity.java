@@ -16,7 +16,6 @@ public class UsersEntity {
     private Timestamp birthday;
     private int promotionalCode;
     private int deviceId;
-    private DevicesEntity devicesByDeviceId;
 
     @Id
     @Column(name = "id", nullable = false, insertable = true, updatable = true)

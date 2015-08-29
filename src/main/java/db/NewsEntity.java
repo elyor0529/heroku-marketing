@@ -16,7 +16,6 @@ public class NewsEntity {
     private String content;
     private String title;
     private int companyId;
-    private CompaniesEntity companiesByCompanyId;
 
     @Id
     @Column(name = "id", nullable = false, insertable = true, updatable = true)

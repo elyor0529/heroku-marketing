@@ -1,7 +1,6 @@
 package db;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 /**
  * Created by elyor on 8/29/2015.
@@ -18,8 +17,6 @@ public class CompaniesEntity {
     private String siteUrl;
     private String privacyPolicy;
     private String phone;
-    private Collection<NewsEntity> newsesById;
-    private Collection<ProductsEntity> productsesById;
 
     @Id
     @Column(name = "id", nullable = false, insertable = true, updatable = true)

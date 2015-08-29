@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
     <jsp:include page="./partials/header.jsp"/>
-    <title>Marketing | Home</title>
+    <title>Marketing | Api</title>
 </head>
 
 <body>
@@ -58,39 +58,62 @@
     <!-- Example row of columns -->
     <div class="page-header">
         <h1>
-            Home
+            Api
         </h1>
     </div>
 
-    <div class="jumbotron">
-        <h1>Marketing stuff!</h1>
-
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus
-            commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
-
-        <p><a class="btn btn-lg btn-success" href="./" role="button">Get started today</a></p>
-    </div>
-
-    <!-- Example row of columns -->
     <div class="row">
         <div class="col-lg-4">
-            <h2>Safari bug warning!</h2>
+            <h2>Company</h2>
 
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
-                euismod. Donec sed odio dui. </p>
+            <p class="text-info">Put content here.</p>
 
-            <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="./rest/company?offset=10&limit=10" role="button">View
+                details &raquo;</a></p>
         </div>
+
         <div class="col-lg-4">
-            <h2>Heading</h2>
+            <h2>Device</h2>
 
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
-                euismod. Donec sed odio dui. </p>
+            <p class="text-info">Put content here.</p>
 
-            <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="./rest/device?offset=10&limit=10" role="button">View details &raquo;</a>
+            </p>
         </div>
+
+        <div class="col-lg-4">
+            <h2>News</h2>
+
+            <p class="text-info">Put content here.</p>
+
+            <p><a class="btn btn-primary" href="./rest/news?offset=10&limit=10" role="button">View details &raquo;</a>
+            </p>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <h2>Product</h2>
+
+            <p class="text-info">Put content here.</p>
+
+            <p><a class="btn btn-primary" href="./rest/product?offset=10&limit=10" role="button">View
+                details &raquo;</a></p>
+        </div>
+
+        <div class="col-lg-4">
+            <h2>User</h2>
+
+            <p class="text-info">Put content here.</p>
+
+            <p><a class="btn btn-primary" href="./rest/user?offset=10&limit=10" role="button">View details &raquo;</a>
+            </p>
+        </div>
+
+        <div class="col-lg-4">
+        </div>
+
     </div>
 
 </div>
