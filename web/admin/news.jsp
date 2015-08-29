@@ -79,11 +79,7 @@
 <jsp:include page="./../partials/footer.jsp"/>
 <script src="./../assets/components/DataTables/media/js/jquery.dataTables.min.js"></script>
 <script src="./../assets/components/DataTables/media/js/dataTables.bootstrap.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#newsTable').dataTable();
-    });
-</script>
+<script src="./../assets/js/main.js"></script>
 
 </body>
 </html>

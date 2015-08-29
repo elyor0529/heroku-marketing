@@ -1,6 +1,6 @@
 <%@ page import="db.ProductsEntity" %>
-<%@ page import="manager.ProductManager" %>
 <%@ page import="manager.ManagerImpl" %>
+<%@ page import="manager.ProductManager" %>
 <%@ page import="java.util.List" %>
 <%
     ManagerImpl<ProductsEntity> manager = new ProductManager();
@@ -14,7 +14,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<table class="table table-responsible" id="productTable">
+<table class="table table-responsible" id="dataTable">
     <thead>
     <tr>
         <th>#</th>

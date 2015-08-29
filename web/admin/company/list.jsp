@@ -1,7 +1,7 @@
-<%@ page import="java.util.List" %>
 <%@ page import="db.CompaniesEntity" %>
 <%@ page import="manager.CompanyManager" %>
 <%@ page import="manager.ManagerImpl" %>
+<%@ page import="java.util.List" %>
 
 <%
     ManagerImpl<CompaniesEntity> manager = new CompanyManager();
@@ -16,7 +16,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<table class="table table-responsible" id="companyTable">
+<table class="table table-responsible" id="dataTable">
     <thead>
     <tr>
         <th>#</th>

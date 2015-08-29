@@ -1,8 +1,7 @@
-<%@ page import="db.CompaniesEntity" %>
-<%@ page import="manager.ManagerImpl" %>
-<%@ page import="java.util.List" %>
 <%@ page import="db.DevicesEntity" %>
 <%@ page import="manager.DeviceManager" %>
+<%@ page import="manager.ManagerImpl" %>
+<%@ page import="java.util.List" %>
 <%
     ManagerImpl<DevicesEntity> manager = new DeviceManager();
     List<DevicesEntity> list = manager.getAll(0, 0);
@@ -16,7 +15,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<table class="table table-responsible" id="deviceTable">
+<table class="table table-responsible" id="dataTable">
     <thead>
     <tr>
         <th>#</th>

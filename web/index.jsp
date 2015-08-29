@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
     <jsp:include page="./partials/header.jsp"/>
-    <title>Marketing | Api</title>
+    <title>Marketing | Home </title>
 </head>
 
 <body>
@@ -34,7 +34,7 @@
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="./about.jsp">About</a></li>
-                    <li class="active"><a href="./contact.jsp">Contact</a></li>
+                    <li><a href="./contact.jsp">Contact</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false">Admin <span class="caret"></span></a>
@@ -54,13 +54,23 @@
         </div>
     </nav>
 
+    <div class="jumbotron">
+        <h1>Marketing stuff!</h1>
+
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus
+            commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
+
+        <p><a class="btn btn-lg btn-success" href="./" role="button">Get started today</a></p>
+    </div>
 
     <!-- Example row of columns -->
     <div class="page-header">
-        <h1>
+        <h2>
             Api
-        </h1>
+        </h2>
     </div>
+
+    <p class="lead">Put content here</p>
 
     <div class="row">
         <div class="col-lg-4">

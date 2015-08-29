@@ -20,7 +20,7 @@
 <link href="./../assets/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="./../assets/css/sticky-footer-navbar.css" rel="stylesheet">
+<link href="../assets/css/main.css" rel="stylesheet">
 
 <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 <!--[if lt IE 9]>

@@ -62,7 +62,7 @@
         </h1>
     </div>
 
-    <p>Put content here</p>
+    <p class="lead">Put content here</p>
 
 </div>
 

@@ -1,7 +1,7 @@
 <%@ page import="db.UsersEntity" %>
 <%@ page import="manager.ManagerImpl" %>
-<%@ page import="java.util.List" %>
 <%@ page import="manager.UserManager" %>
+<%@ page import="java.util.List" %>
 <%
     ManagerImpl<UsersEntity> manager = new UserManager();
     List<UsersEntity> list = manager.getAll(0, 0);
@@ -14,7 +14,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<table class="table table-responsible" id="userTable">
+<table class="table table-responsible" id="dataTable">
     <thead>
     <tr>
         <th>#</th>
