@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="hibernate">
+    <CLASSES>
+      <root url="file://C:/tmp/libs/hibernate" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://C:/tmp/libs/hibernate" recursive="false" />
+  </library>
+</component>

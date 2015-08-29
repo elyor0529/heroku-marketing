@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/marketing</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">web@1234</property>
+        <property name="hbm2ddl.auto">update</property>
+        <mapping resource="mapping/CompaniesEntity.hbm.xml"/>
+        <mapping class="db.CompaniesEntity"/>
+        <mapping resource="mapping/DevicesEntity.hbm.xml"/>
+        <mapping class="db.DevicesEntity"/>
+        <mapping class="db.NewsEntity"/>
+        <mapping resource="mapping/NewsEntity.hbm.xml"/>
+        <mapping class="db.ProductsEntity"/>
+        <mapping resource="mapping/ProductsEntity.hbm.xml"/>
+        <mapping class="db.UsersEntity"/>
+        <mapping resource="mapping/UsersEntity.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
