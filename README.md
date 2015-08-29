@@ -1,2 +1,2 @@
-# hiroku-marketing
-Hiroku Marketing
+# heroku-marketing
+Heroku Marketing
