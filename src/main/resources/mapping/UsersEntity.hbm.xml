@@ -6,7 +6,7 @@
 
     <class name="db.UsersEntity" table="users" schema="public" catalog="marketing">
         <id name="id">
-            <column name="id" sql-type="int" not-null="true"/>
+            <column name="id" sql-type="serial" not-null="true"/>
         </id>
         <property name="fullName">
             <column name="full_name" sql-type="varchar" length="250" not-null="true"/>
@@ -18,13 +18,13 @@
             <column name="gender" sql-type="varchar" length="25" not-null="true"/>
         </property>
         <property name="birthday">
-            <column name="birthday" sql-type="datetime" not-null="true"/>
+            <column name="birthday" sql-type="timestamptz" not-null="true"/>
         </property>
         <property name="promotionalCode">
-            <column name="promotional_code" sql-type="int" not-null="true"/>
+            <column name="promotional_code" sql-type="int4" not-null="true"/>
         </property>
         <property name="deviceId">
-            <column name="device_id" sql-type="int" not-null="true"/>
+            <column name="device_id" sql-type="int4" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>
