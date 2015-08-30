@@ -33,6 +33,7 @@
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
+                    <li><a href="./rest/index.jsp">Rest</a></li>
                     <li><a href="./about.jsp">About</a></li>
                     <li><a href="./contact.jsp">Contact</a></li>
                     <li class="dropdown">
@@ -61,69 +62,6 @@
             commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
 
         <p><a class="btn btn-lg btn-success" href="./" role="button">Get started today</a></p>
-    </div>
-
-    <!-- Example row of columns -->
-    <div class="page-header">
-        <h2>
-            Api
-        </h2>
-    </div>
-
-    <p class="lead">Put content here</p>
-
-    <div class="row">
-        <div class="col-lg-4">
-            <h2>Company</h2>
-
-            <p class="text-info">Put content here.</p>
-
-            <p><a class="btn btn-primary" href="./rest/company?offset=10&limit=10" role="button">View
-                details &raquo;</a></p>
-        </div>
-
-        <div class="col-lg-4">
-            <h2>Device</h2>
-
-            <p class="text-info">Put content here.</p>
-
-            <p><a class="btn btn-primary" href="./rest/device?offset=10&limit=10" role="button">View details &raquo;</a>
-            </p>
-        </div>
-
-        <div class="col-lg-4">
-            <h2>News</h2>
-
-            <p class="text-info">Put content here.</p>
-
-            <p><a class="btn btn-primary" href="./rest/news?offset=10&limit=10" role="button">View details &raquo;</a>
-            </p>
-        </div>
-
-    </div>
-
-    <div class="row">
-        <div class="col-lg-4">
-            <h2>Product</h2>
-
-            <p class="text-info">Put content here.</p>
-
-            <p><a class="btn btn-primary" href="./rest/product?offset=10&limit=10" role="button">View
-                details &raquo;</a></p>
-        </div>
-
-        <div class="col-lg-4">
-            <h2>User</h2>
-
-            <p class="text-info">Put content here.</p>
-
-            <p><a class="btn btn-primary" href="./rest/user?offset=10&limit=10" role="button">View details &raquo;</a>
-            </p>
-        </div>
-
-        <div class="col-lg-4">
-        </div>
-
     </div>
 
 </div>

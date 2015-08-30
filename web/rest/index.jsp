@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
     <jsp:include page="./../partials/header.jsp"/>
-    <title>Marketing | Admin</title>
+    <title>Marketing | Rest</title>
 </head>
 
 <body>
@@ -34,20 +34,20 @@
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="./../rest/index.jsp">Rest</a></li>
+                    <li class="active"><a href="./index.jsp">Rest</a></li>
                     <li><a href="./../about.jsp">About</a></li>
                     <li><a href="./../contact.jsp">Contact</a></li>
                     <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false">Admin <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li class="active"><a href="./index.jsp">Home</a></li>
+                            <li><a href="./../admin/index.jsp">Home</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="./company.jsp">Company</a></li>
-                            <li><a href="./device.jsp">Device</a></li>
-                            <li><a href="./user.jsp">User</a></li>
-                            <li><a href="./news.jsp">News</a></li>
-                            <li><a href="./product.jsp">Product</a></li>
+                            <li><a href="./../admin/company.jsp">Company</a></li>
+                            <li><a href="./../admin/device.jsp">Device</a></li>
+                            <li><a href="./../admin/user.jsp">User</a></li>
+                            <li><a href="./../admin/news.jsp">News</a></li>
+                            <li><a href="./../admin/product.jsp">Product</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -58,7 +58,9 @@
 
     <!-- Example row of columns -->
     <div class="page-header">
-        <h1>Admin</h1>
+        <h2>
+            Rest
+        </h2>
     </div>
 
     <p class="lead">Put content here</p>
@@ -69,7 +71,8 @@
 
             <p class="text-info">Put content here.</p>
 
-            <p><a class="btn btn-primary" href="./company.jsp" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="./rest/company?offset=10&limit=10" role="button">View
+                details &raquo;</a></p>
         </div>
 
         <div class="col-lg-4">
@@ -77,7 +80,8 @@
 
             <p class="text-info">Put content here.</p>
 
-            <p><a class="btn btn-primary" href="./device.jsp" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="./rest/device?offset=10&limit=10" role="button">View details &raquo;</a>
+            </p>
         </div>
 
         <div class="col-lg-4">
@@ -85,7 +89,8 @@
 
             <p class="text-info">Put content here.</p>
 
-            <p><a class="btn btn-primary" href="./news.jsp" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="./rest/news?offset=10&limit=10" role="button">View details &raquo;</a>
+            </p>
         </div>
 
     </div>
@@ -96,7 +101,8 @@
 
             <p class="text-info">Put content here.</p>
 
-            <p><a class="btn btn-primary" href="./product.jsp" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="./rest/product?offset=10&limit=10" role="button">View
+                details &raquo;</a></p>
         </div>
 
         <div class="col-lg-4">
@@ -104,7 +110,8 @@
 
             <p class="text-info">Put content here.</p>
 
-            <p><a class="btn btn-primary" href="./user.jsp" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="./rest/user?offset=10&limit=10" role="button">View details &raquo;</a>
+            </p>
         </div>
 
         <div class="col-lg-4">

@@ -33,6 +33,7 @@
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
+                    <li><a href="./rest/index.jsp">Rest</a></li>
                     <li class="active"><a href="./about.jsp">About</a></li>
                     <li><a href="./contact.jsp">Contact</a></li>
                     <li class="dropdown">
