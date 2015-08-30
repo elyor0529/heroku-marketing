@@ -37,7 +37,7 @@
                     <li class="active"><a href="./index.jsp">Rest</a></li>
                     <li><a href="./../about.jsp">About</a></li>
                     <li><a href="./../contact.jsp">Contact</a></li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false">Admin <span class="caret"></span></a>
                         <ul class="dropdown-menu">
