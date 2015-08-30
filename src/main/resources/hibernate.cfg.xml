@@ -5,7 +5,7 @@
 <hibernate-configuration>
     <session-factory>
         <property name="connection.url">
-            jdbc:postgresql://ec2-54-83-58-191.compute-1.amazonaws.com:5432/d3pc16rn0l88v9?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory
+            jdbc:postgresql://ec2-54-83-58-191.compute-1.amazonaws.com:5432/dd3e8jafl17maj?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory
         </property>
         <property name="connection.driver_class">
             org.postgresql.Driver
@@ -14,10 +14,10 @@
             org.hibernate.dialect.PostgreSQLDialect
         </property>
         <property name="connection.username">
-            fqzqaaiowbedog
+            curcdgwhleqjmi
         </property>
         <property name="connection.password">
-            rHCGFQPquL3cfZN9zzQHC4vYNM
+            D3MZJpbWVnKEQcvN0V3YGMQGr5
         </property>
         <mapping resource="mapping/CompaniesEntity.hbm.xml"/>
         <mapping class="db.CompaniesEntity"/>
