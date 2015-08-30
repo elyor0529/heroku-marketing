@@ -71,7 +71,7 @@
 
             <p class="text-info">Put content here.</p>
 
-            <p><a class="btn btn-primary" href="./rest/company?offset=10&limit=10" role="button">View
+            <p><a class="btn btn-primary" href="./company?offset=10&limit=10" role="button">View
                 details &raquo;</a></p>
         </div>
 
@@ -80,7 +80,7 @@
 
             <p class="text-info">Put content here.</p>
 
-            <p><a class="btn btn-primary" href="./rest/device?offset=10&limit=10" role="button">View details &raquo;</a>
+            <p><a class="btn btn-primary" href="./device?offset=10&limit=10" role="button">View details &raquo;</a>
             </p>
         </div>
 
@@ -89,7 +89,7 @@
 
             <p class="text-info">Put content here.</p>
 
-            <p><a class="btn btn-primary" href="./rest/news?offset=10&limit=10" role="button">View details &raquo;</a>
+            <p><a class="btn btn-primary" href="./news?offset=10&limit=10" role="button">View details &raquo;</a>
             </p>
         </div>
 
@@ -101,7 +101,7 @@
 
             <p class="text-info">Put content here.</p>
 
-            <p><a class="btn btn-primary" href="./rest/product?offset=10&limit=10" role="button">View
+            <p><a class="btn btn-primary" href="./product?offset=10&limit=10" role="button">View
                 details &raquo;</a></p>
         </div>
 
@@ -110,7 +110,7 @@
 
             <p class="text-info">Put content here.</p>
 
-            <p><a class="btn btn-primary" href="./rest/user?offset=10&limit=10" role="button">View details &raquo;</a>
+            <p><a class="btn btn-primary" href="./user?offset=10&limit=10" role="button">View details &raquo;</a>
             </p>
         </div>
 
