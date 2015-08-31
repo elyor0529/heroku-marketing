@@ -1,13 +1,12 @@
 package helpers;
 
-import java.math.BigInteger;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
  * Created by elyor on 8/9/2015.
  */
-public final class ConvertHelper {
+public class ConvertHelper {
 
     public static final String ToString(Object o) {
         return o != null ? o.toString() : "";

@@ -3,6 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/heroku_marketing_jar</output-path>
     <root id="archive" name="heroku-marketing.jar">
       <element id="module-output" name="heroku-marketing" />
+      <element id="module-test-output" name="heroku-marketing" />
       <element id="extracted-dir" path="C:/tmp/libs/json/json-1.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="C:/tmp/libs/hibernate/antlr-2.7.7.jar" path-in-jar="/" />
       <element id="extracted-dir" path="C:/tmp/libs/hibernate/dom4j-1.6.1.jar" path-in-jar="/" />

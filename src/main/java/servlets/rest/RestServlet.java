@@ -2,18 +2,14 @@ package servlets.rest;
 
 import helpers.ConvertHelper;
 import helpers.SettingsHelper;
-import helpers.JsonHelper;
 import manager.ManagerImpl;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import models.RestResponseModel;
 import servlets.BaseServlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 /**
@@ -35,7 +31,7 @@ public abstract class RestServlet<T> extends BaseServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         try {
-            JSONObject json;
+            String json = null;
 
             final int id = ConvertHelper.ToString(request.getParameter("id")).isEmpty()
                     ? 0
@@ -44,49 +40,34 @@ public abstract class RestServlet<T> extends BaseServlet {
             if (id > 0) {
 
                 final T t = manager.get(id);
-                json = JsonHelper.toObject(t);
 
+                json = SettingsHelper.GSON.toJson(t);
             } else {
-
-                json = new JSONObject();
+                final RestResponseModel<T> t = new RestResponseModel<T>();
 
                 final int size = manager.getSize();
-                json.put("total", size);
+                t.setTotal(size);
 
                 final int limit = ConvertHelper.ToString(request.getParameter("limit")).isEmpty()
                         ? SettingsHelper.PAGING.LIMIT
                         : ConvertHelper.ToInteger(request.getParameter("limit"));
-                json.put("limit", limit);
+                t.setLimit(limit);
 
                 final int offset = ConvertHelper.ToString(request.getParameter("offset")).isEmpty()
                         ? SettingsHelper.PAGING.OFFSET
                         : ConvertHelper.ToInteger(request.getParameter("offset"));
-                json.put("offset", offset);
+                t.setOffset(offset);
 
                 final List<T> list = manager.getAll(limit, offset);
-                final JSONArray items = new JSONArray();
 
-                for (T t : list) {
+                t.setItems(list);
 
-                    final JSONObject item = JsonHelper.toObject(t);
-
-                    items.put(item);
-                }
-
-                json.put("items", items);
+                json = SettingsHelper.GSON.toJson(t);
             }
 
             printJson(response, json);
 
-        } catch (JSONException e) {
-            printError(response, e);
-        } catch (IllegalAccessException e) {
-            printError(response, e);
-        } catch (InstantiationException e) {
-            printError(response, e);
-        } catch (NoSuchMethodException e) {
-            printError(response, e);
-        } catch (InvocationTargetException e) {
+        } catch (Exception e) {
             printError(response, e);
         }
 

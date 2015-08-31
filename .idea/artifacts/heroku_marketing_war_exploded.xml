@@ -11,7 +11,7 @@
           <element id="library" level="project" name="postgresql" />
           <element id="library" level="project" name="hibernate" />
           <element id="library" level="project" name="common" />
-          <element id="library" level="project" name="json" />
+          <element id="library" level="project" name="gson" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="heroku-marketing/web/Web" />

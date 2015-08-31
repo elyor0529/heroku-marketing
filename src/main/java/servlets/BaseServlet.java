@@ -1,10 +1,6 @@
 package servlets;
 
 import helpers.SettingsHelper;
-import manager.ManagerImpl;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +12,7 @@ import java.io.IOException;
 public abstract class BaseServlet extends HttpServlet {
 
 
-    protected void printJson(HttpServletResponse response, JSONObject json) {
+    protected void printJson(HttpServletResponse response, String json) {
 
         response.setContentType(SettingsHelper.REST_TYPE);
 
@@ -31,11 +27,11 @@ public abstract class BaseServlet extends HttpServlet {
 
     protected void printError(HttpServletResponse response, Exception exception) {
 
-        final JSONObject json = new JSONObject();
+        String json = null;
 
         try {
-            json.put("error", exception.getMessage());
-        } catch (JSONException e) {
+            json = SettingsHelper.GSON.toJson(exception);
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

@@ -7,7 +7,6 @@
           <unit-entry name="hibernate.cfg.xml" value="65d053c1-cbba-4bb8-a230-7174346b3d22" />
         </datasource-map>
         <naming-strategy-map />
-        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/hibernate.cfg.xml" />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/hibernate.cfg.xml" />
       </configuration>
     </facet>
@@ -21,12 +20,11 @@
         </webroots>
         <sourceRoots>
           <root url="file://$MODULE_DIR$/src/main/java" />
-          <root url="file://$MODULE_DIR$/src" />
         </sourceRoots>
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -41,6 +39,6 @@
     <orderEntry type="library" name="postgresql" level="project" />
     <orderEntry type="library" name="hibernate" level="project" />
     <orderEntry type="library" name="common" level="project" />
-    <orderEntry type="library" name="json" level="project" />
+    <orderEntry type="library" name="gson" level="project" />
   </component>
 </module>

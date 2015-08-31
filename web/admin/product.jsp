@@ -11,9 +11,6 @@
 <head>
     <jsp:include page="../partials/header.jsp"/>
     <title>Marketing | Product</title>
-    <link href="./../assets/components/DataTables/media/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="./../assets/components/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="./../assets/components/DataTables/media/css/jquery.dataTables_themeroller.css" rel="stylesheet">
 </head>
 
 <body>
@@ -79,8 +76,6 @@
 </div>
 <jsp:include page="./../partials/footer.jsp"/>
 
-<script src="./../assets/components/DataTables/media/js/jquery.dataTables.min.js"></script>
-<script src="./../assets/components/DataTables/media/js/dataTables.bootstrap.min.js"></script>
 <script src="./../assets/js/main.js"></script>
 </body>
 </html>

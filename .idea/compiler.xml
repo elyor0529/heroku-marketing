@@ -27,8 +27,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="heroku-marketing" target="1.5" />
-      <module name="hiroku-marketing" target="1.5" />
+      <module name="heroku-marketing" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="GENERATE_NO_WARNINGS" value="true" />
   </component>
 </project>

@@ -1,7 +1,5 @@
-import org.hibernate.HibernateException;
-import org.hibernate.SessionFactory;
-import org.hibernate.Session;
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.metadata.ClassMetadata;
 import org.hibernate.type.Type;
 import utils.HibernateFactory;
@@ -15,11 +13,18 @@ public class Main {
 
     public static void main(final String[] args) throws Exception {
 
-        final Session session = HibernateFactory.getSession();
-        final Map metadataMap = session.getSessionFactory().getAllClassMetadata();
 
         System.out.println("------------------------------------");
 
+        RunHibernate();
+
+        System.out.println("------------------------------------");
+
+    }
+
+    private static void RunHibernate() {
+        final Session session = HibernateFactory.getSession();
+        final Map metadataMap = session.getSessionFactory().getAllClassMetadata();
         for (Object key : metadataMap.keySet()) {
 
             final ClassMetadata classMetadata = (ClassMetadata) metadataMap.get(key);
@@ -38,8 +43,5 @@ public class Main {
             }
 
         }
-
-        System.out.println("------------------------------------");
-
     }
 }
