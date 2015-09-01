@@ -20,20 +20,22 @@ public class PagingResponseModel<T> {
     private List<T> items;
 
     public PagingResponseModel(ManagerImpl<T> manager, String pageParam, String sizeParam) {
-        this(manager, ConvertHelper.ToString(pageParam).isEmpty()
-                ? Settings.PAGING.PAGE
-                : ConvertHelper.ToInteger(pageParam), ConvertHelper.ToString(sizeParam).isEmpty()
-                ? Settings.PAGING.COUNT - 1
-                : ConvertHelper.ToInteger(sizeParam));
+        this(manager,
+                ConvertHelper.ToString(pageParam).isEmpty()
+                        ? Settings.PAGING.PAGE
+                        : ConvertHelper.ToInteger(pageParam),
+                ConvertHelper.ToString(sizeParam).isEmpty()
+                        ? Settings.PAGING.COUNT
+                        : ConvertHelper.ToInteger(sizeParam));
     }
 
     public PagingResponseModel(ManagerImpl<T> manager, int currentPage, int pageSize) {
         this.currentPage = currentPage;
         this.pageSize = pageSize;
         this.totalRecord = manager.getSize();
-        this.pageCount = (int) Math.round(Math.ceil(this.totalRecord / this.pageSize));
+        this.pageCount = this.pageSize > 0 ? (int) Math.round(Math.ceil(this.totalRecord / this.pageSize)) : 0;
         this.prevPage = (this.currentPage > 0) ? this.currentPage - 1 : 0;
-        this.nextPage = (this.currentPage > 0 && this.currentPage < pageCount - 1) ? this.currentPage + 1 : this.pageCount - 1;
+        this.nextPage = (this.currentPage > 0 && this.currentPage < this.pageCount - 1) ? this.currentPage + 1 : this.pageCount - 1;
         this.items = manager.getAll(this.pageSize, this.pageSize * (this.currentPage - 1));
     }
 

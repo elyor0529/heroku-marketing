@@ -8,19 +8,19 @@ import java.util.Date;
  */
 public class ConvertHelper {
 
-    public static final String ToString(Object o) {
+    public static String ToString(Object o) {
         return o != null ? o.toString() : "";
     }
 
-    public static final String ToString(String s) {
+    public static String ToString(String s) {
         return s != null ? s : "";
     }
 
-    public static final Date ToDate(Object o) {
+    public static Date ToDate(Object o) {
         return ToDate(ToString(o));
     }
 
-    public static final Date ToDate(String s) {
+    public static Date ToDate(String s) {
 
         if (s.isEmpty())
             return null;
@@ -36,7 +36,7 @@ public class ConvertHelper {
         return dt;
     }
 
-    public static final Integer ToInteger(String s) {
+    public static Integer ToInteger(String s) {
 
         if (ToString(s).isEmpty()) {
             return null;
@@ -45,7 +45,7 @@ public class ConvertHelper {
         return Integer.parseInt(ToString(s));
     }
 
-    public static final Integer ToInteger(Object o) {
+    public static Integer ToInteger(Object o) {
         return ToInteger(ToString(o));
     }
 

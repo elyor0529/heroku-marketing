@@ -4,7 +4,7 @@
   User: elyor
   Date: 9/1/2015
   Time: 2:50 PM
-  To change this template use File | Settings | File Templates.
+  To change this template use File | helpers.FactoryHelper | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <nav class="navbar navbar-default navbar-fixed-top">

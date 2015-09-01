@@ -3,7 +3,7 @@
   User: elyor
   Date: 8/26/2015
   Time: 12:42 PM
-  To change this template use File | Settings | File Templates.
+  To change this template use File | helpers.FactoryHelper | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>

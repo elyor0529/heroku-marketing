@@ -13,7 +13,7 @@
   User: elyor
   Date: 8/22/2015
   Time: 11:24 PM
-  To change this template use File | Settings | File Templates.
+  To change this template use File | helpers.FactoryHelper | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -45,15 +45,14 @@
         <td><%=item.getCompanyId()%>
         </td>
         <td>
-            <a href="#<%=item.getId()%>" class="btn btn-default">
-                View
-            </a>
-            <a href="#<%=item.getId()%>" class="btn btn-success">
-                Edit
-            </a>
-            <a href="#<%=item.getId()%>" class="btn btn-danger">
-                Delete
-            </a>
+            <p>
+                <a class="btn btn-default" href="./view.jsp?id=<%=item.getId()%>"><i
+                        class="glyphicon glyphicon-eye-open"></i> View</a>
+                <a class="btn btn-primary" href="./edit.jsp?id=<%=item.getId()%>"><i
+                        class="glyphicon glyphicon-pencil"></i> Edit</a>
+                <a class="btn btn-danger" href="./delete.jsp?id=<%=item.getId()%>"><i
+                        class="glyphicon glyphicon-remove"></i> Delete</a>
+            </p>
         </td>
     </tr>
     <%}%>

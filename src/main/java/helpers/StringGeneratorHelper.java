@@ -7,9 +7,9 @@ import java.util.Random;
  * Created by Elyor on 8/11/2014.
  */
 
-public final class StringGeneratorHelper {
+public class StringGeneratorHelper {
 
-    public final static String generateString(int length) {
+    public static String generateString(int length) {
 
         final StringBuffer buffer = new StringBuffer();
         final String characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";

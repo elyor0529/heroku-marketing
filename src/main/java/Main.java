@@ -1,4 +1,4 @@
-import helpers.HibernateFactoryHelper;
+import helpers.FactoryHelper;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.metadata.ClassMetadata;
@@ -23,7 +23,7 @@ public class Main {
     }
 
     private static void RunHibernate() {
-        final Session session = HibernateFactoryHelper.getSession();
+        final Session session = FactoryHelper.getSession();
         final Map metadataMap = session.getSessionFactory().getAllClassMetadata();
         for (Object key : metadataMap.keySet()) {
 

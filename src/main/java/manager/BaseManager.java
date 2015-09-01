@@ -1,6 +1,6 @@
 package manager;
 
-import helpers.HibernateFactoryHelper;
+import helpers.FactoryHelper;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
@@ -18,7 +18,7 @@ public abstract class BaseManager<T> implements ManagerImpl<T> {
     public BaseManager(T t) {
         this.t = t;
         entityName = t.getClass().getName();
-        session = HibernateFactoryHelper.getSession();
+        session = FactoryHelper.getSession();
     }
 
     protected final Session getSession() {
@@ -30,7 +30,7 @@ public abstract class BaseManager<T> implements ManagerImpl<T> {
         final String sql = "from " + entityName;
         final Query query = session.createQuery(sql);
 
-        if (limit > 0) {
+        if (limit >= 0) {
             query.setMaxResults(limit);
         }
 

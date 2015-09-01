@@ -1,6 +1,7 @@
 package servlets.rest;
 
 import helpers.ConvertHelper;
+import helpers.FactoryHelper;
 import manager.ManagerImpl;
 import models.RestResponseModel;
 import servlets.BaseServlet;
@@ -41,7 +42,7 @@ public abstract class RestServlet<T> extends BaseServlet {
 
                 final T t = manager.get(id);
 
-                json = Settings.getGson().toJson(t);
+                json = FactoryHelper.getGson().toJson(t);
             } else {
                 final RestResponseModel<T> t = new RestResponseModel<T>();
 
@@ -62,7 +63,7 @@ public abstract class RestServlet<T> extends BaseServlet {
 
                 t.setItems(list);
 
-                json = Settings.getGson().toJson(t);
+                json = FactoryHelper.getGson().toJson(t);
             }
 
             printJson(response, json);
