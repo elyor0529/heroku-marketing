@@ -87,32 +87,77 @@ public class NewsEntity {
         this.companyId = companyId;
     }
 
+    @PrePersist
+    void prePersist() {
+    }
+
+    @PreUpdate
+    void preUpdate() {
+    }
+
+    @PreRemove
+    void preRemove() {
+    }
+
+    @PostLoad
+    void postLoad() {
+    }
+
+    @PostRemove
+    void postRemove() {
+    }
+
+    @PostUpdate
+    void postUpdate() {
+    }
+
+    @PostPersist
+    void postPersist() {
+    }
+
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+
+        if (this == o)
+            return true;
+
+        if (o == null || getClass() != o.getClass())
+            return false;
 
         NewsEntity that = (NewsEntity) o;
 
-        if (id != that.id) return false;
-        if (companyId != that.companyId) return false;
-        if (photoUrl != null ? !photoUrl.equals(that.photoUrl) : that.photoUrl != null) return false;
-        if (modifiedDate != null ? !modifiedDate.equals(that.modifiedDate) : that.modifiedDate != null) return false;
-        if (createdDate != null ? !createdDate.equals(that.createdDate) : that.createdDate != null) return false;
-        if (content != null ? !content.equals(that.content) : that.content != null) return false;
-        return !(title != null ? !title.equals(that.title) : that.title != null);
+        if (id != that.id)
+            return false;
 
+        if (companyId != that.companyId)
+            return false;
+
+        if (photoUrl != null ? !photoUrl.equals(that.photoUrl) : that.photoUrl != null)
+            return false;
+
+        if (modifiedDate != null ? !modifiedDate.equals(that.modifiedDate) : that.modifiedDate != null)
+            return false;
+
+        if (createdDate != null ? !createdDate.equals(that.createdDate) : that.createdDate != null)
+            return false;
+
+        if (content != null ? !content.equals(that.content) : that.content != null)
+            return false;
+
+        return !(title != null ? !title.equals(that.title) : that.title != null);
     }
 
     @Override
     public int hashCode() {
         int result = id;
+
         result = 31 * result + (photoUrl != null ? photoUrl.hashCode() : 0);
         result = 31 * result + (modifiedDate != null ? modifiedDate.hashCode() : 0);
         result = 31 * result + (createdDate != null ? createdDate.hashCode() : 0);
         result = 31 * result + (content != null ? content.hashCode() : 0);
         result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + companyId;
+
         return result;
     }
 

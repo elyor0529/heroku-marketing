@@ -108,30 +108,77 @@ public class CompaniesEntity {
         this.phone = phone;
     }
 
+    @PrePersist
+    void prePersist() {
+    }
+
+    @PreUpdate
+    void preUpdate() {
+    }
+
+    @PreRemove
+    void preRemove() {
+    }
+
+    @PostLoad
+    void postLoad() {
+    }
+
+    @PostRemove
+    void postRemove() {
+    }
+
+    @PostUpdate
+    void postUpdate() {
+    }
+
+    @PostPersist
+    void postPersist() {
+    }
+
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+
+        if (this == o)
+            return true;
+
+        if (o == null || getClass() != o.getClass())
+            return false;
 
         CompaniesEntity that = (CompaniesEntity) o;
 
-        if (id != that.id) return false;
-        if (Double.compare(that.currency, currency) != 0) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (key != null ? !key.equals(that.key) : that.key != null) return false;
-        if (logoUrl != null ? !logoUrl.equals(that.logoUrl) : that.logoUrl != null) return false;
-        if (about != null ? !about.equals(that.about) : that.about != null) return false;
-        if (siteUrl != null ? !siteUrl.equals(that.siteUrl) : that.siteUrl != null) return false;
+        if (id != that.id)
+            return false;
+
+        if (Double.compare(that.currency, currency) != 0)
+            return false;
+
+        if (name != null ? !name.equals(that.name) : that.name != null)
+            return false;
+
+        if (key != null ? !key.equals(that.key) : that.key != null)
+            return false;
+
+        if (logoUrl != null ? !logoUrl.equals(that.logoUrl) : that.logoUrl != null)
+            return false;
+
+        if (about != null ? !about.equals(that.about) : that.about != null)
+            return false;
+
+        if (siteUrl != null ? !siteUrl.equals(that.siteUrl) : that.siteUrl != null)
+            return false;
+
         if (privacyPolicy != null ? !privacyPolicy.equals(that.privacyPolicy) : that.privacyPolicy != null)
             return false;
-        return !(phone != null ? !phone.equals(that.phone) : that.phone != null);
 
+        return !(phone != null ? !phone.equals(that.phone) : that.phone != null);
     }
 
     @Override
     public int hashCode() {
         int result;
         long temp;
+
         result = id;
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (key != null ? key.hashCode() : 0);
@@ -142,6 +189,7 @@ public class CompaniesEntity {
         result = 31 * result + (siteUrl != null ? siteUrl.hashCode() : 0);
         result = 31 * result + (privacyPolicy != null ? privacyPolicy.hashCode() : 0);
         result = 31 * result + (phone != null ? phone.hashCode() : 0);
+
         return result;
     }
 }

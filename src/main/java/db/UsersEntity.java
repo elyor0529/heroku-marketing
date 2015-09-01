@@ -87,32 +87,76 @@ public class UsersEntity {
         this.deviceId = deviceId;
     }
 
+    @PrePersist
+    void prePersist() {
+    }
+
+    @PreUpdate
+    void preUpdate() {
+    }
+
+    @PreRemove
+    void preRemove() {
+    }
+
+    @PostLoad
+    void postLoad() {
+    }
+
+    @PostRemove
+    void postRemove() {
+    }
+
+    @PostUpdate
+    void postUpdate() {
+    }
+
+    @PostPersist
+    void postPersist() {
+    }
+
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+
+        if (o == null || getClass() != o.getClass())
+            return false;
 
         UsersEntity that = (UsersEntity) o;
 
-        if (id != that.id) return false;
-        if (promotionalCode != that.promotionalCode) return false;
-        if (deviceId != that.deviceId) return false;
-        if (fullName != null ? !fullName.equals(that.fullName) : that.fullName != null) return false;
-        if (email != null ? !email.equals(that.email) : that.email != null) return false;
-        if (gender != null ? !gender.equals(that.gender) : that.gender != null) return false;
-        return !(birthday != null ? !birthday.equals(that.birthday) : that.birthday != null);
+        if (id != that.id)
+            return false;
 
+        if (promotionalCode != that.promotionalCode)
+            return false;
+
+        if (deviceId != that.deviceId)
+            return false;
+
+        if (fullName != null ? !fullName.equals(that.fullName) : that.fullName != null)
+            return false;
+
+        if (email != null ? !email.equals(that.email) : that.email != null)
+            return false;
+
+        if (gender != null ? !gender.equals(that.gender) : that.gender != null)
+            return false;
+
+        return !(birthday != null ? !birthday.equals(that.birthday) : that.birthday != null);
     }
 
     @Override
     public int hashCode() {
         int result = id;
+
         result = 31 * result + (fullName != null ? fullName.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (gender != null ? gender.hashCode() : 0);
         result = 31 * result + (birthday != null ? birthday.hashCode() : 0);
         result = 31 * result + promotionalCode;
         result = 31 * result + deviceId;
+
         return result;
     }
 

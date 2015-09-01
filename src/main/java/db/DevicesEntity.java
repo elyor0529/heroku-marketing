@@ -75,30 +75,73 @@ public class DevicesEntity {
         this.uniqueId = uniqueId;
     }
 
+    @PrePersist
+    void prePersist() {
+    }
+
+    @PreUpdate
+    void preUpdate() {
+    }
+
+    @PreRemove
+    void preRemove() {
+    }
+
+    @PostLoad
+    void postLoad() {
+    }
+
+    @PostRemove
+    void postRemove() {
+    }
+
+    @PostUpdate
+    void postUpdate() {
+    }
+
+    @PostPersist
+    void postPersist() {
+    }
+
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+
+        if (this == o)
+            return true;
+
+        if (o == null || getClass() != o.getClass())
+            return false;
 
         DevicesEntity that = (DevicesEntity) o;
 
-        if (id != that.id) return false;
-        if (brand != null ? !brand.equals(that.brand) : that.brand != null) return false;
-        if (model != null ? !model.equals(that.model) : that.model != null) return false;
-        if (token != null ? !token.equals(that.token) : that.token != null) return false;
-        if (companyKey != null ? !companyKey.equals(that.companyKey) : that.companyKey != null) return false;
-        return !(uniqueId != null ? !uniqueId.equals(that.uniqueId) : that.uniqueId != null);
+        if (id != that.id)
+            return false;
 
+        if (brand != null ? !brand.equals(that.brand) : that.brand != null)
+            return false;
+
+        if (model != null ? !model.equals(that.model) : that.model != null)
+            return false;
+
+        if (token != null ? !token.equals(that.token) : that.token != null)
+            return false;
+
+        if (companyKey != null ? !companyKey.equals(that.companyKey) : that.companyKey != null)
+            return false;
+
+        return !(uniqueId != null ? !uniqueId.equals(that.uniqueId) : that.uniqueId != null);
     }
 
     @Override
     public int hashCode() {
         int result = id;
+
         result = 31 * result + (brand != null ? brand.hashCode() : 0);
         result = 31 * result + (model != null ? model.hashCode() : 0);
         result = 31 * result + (token != null ? token.hashCode() : 0);
         result = 31 * result + (companyKey != null ? companyKey.hashCode() : 0);
         result = 31 * result + (uniqueId != null ? uniqueId.hashCode() : 0);
+
         return result;
     }
 }

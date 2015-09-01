@@ -75,30 +75,73 @@ public class ProductsEntity {
         this.companyId = companyId;
     }
 
+    @PrePersist
+    void prePersist() {
+    }
+
+    @PreUpdate
+    void preUpdate() {
+    }
+
+    @PreRemove
+    void preRemove() {
+    }
+
+    @PostLoad
+    void postLoad() {
+    }
+
+    @PostRemove
+    void postRemove() {
+    }
+
+    @PostUpdate
+    void postUpdate() {
+    }
+
+    @PostPersist
+    void postPersist() {
+    }
+
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+
+        if (this == o)
+            return true;
+
+        if (o == null || getClass() != o.getClass())
+            return false;
 
         ProductsEntity that = (ProductsEntity) o;
 
-        if (id != that.id) return false;
-        if (mark != that.mark) return false;
-        if (companyId != that.companyId) return false;
-        if (photoUrl != null ? !photoUrl.equals(that.photoUrl) : that.photoUrl != null) return false;
-        if (description != null ? !description.equals(that.description) : that.description != null) return false;
-        return !(name != null ? !name.equals(that.name) : that.name != null);
+        if (id != that.id)
+            return false;
 
+        if (mark != that.mark)
+            return false;
+
+        if (companyId != that.companyId)
+            return false;
+
+        if (photoUrl != null ? !photoUrl.equals(that.photoUrl) : that.photoUrl != null)
+            return false;
+
+        if (description != null ? !description.equals(that.description) : that.description != null)
+            return false;
+
+        return !(name != null ? !name.equals(that.name) : that.name != null);
     }
 
     @Override
     public int hashCode() {
         int result = id;
+
         result = 31 * result + (photoUrl != null ? photoUrl.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + mark;
         result = 31 * result + companyId;
+
         return result;
     }
 
