@@ -4,6 +4,8 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
+
+        <!--connection-->
         <property name="connection.url">
             jdbc:postgresql://ec2-54-83-58-191.compute-1.amazonaws.com:5432/dd3e8jafl17maj?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory
         </property>
@@ -19,10 +21,19 @@
         <property name="connection.password">
             D3MZJpbWVnKEQcvN0V3YGMQGr5
         </property>
+
+        <!--class-->
         <mapping class="db.CompaniesEntity"/>
         <mapping class="db.DevicesEntity"/>
         <mapping class="db.NewsEntity"/>
         <mapping class="db.ProductsEntity"/>
         <mapping class="db.UsersEntity"/>
+
+        <!--mapping-->
+        <mapping resource="mapping/NewsEntity.hbm.xml"/>
+        <mapping resource="mapping/ProductsEntity.hbm.xml"/>
+        <mapping resource="mapping/DevicesEntity.hbm.xml"/>
+        <mapping resource="mapping/UsersEntity.hbm.xml"/>
+
     </session-factory>
 </hibernate-configuration>
