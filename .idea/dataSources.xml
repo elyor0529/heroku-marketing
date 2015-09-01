@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1514613294">
-    <data-source source="LOCAL" name="PostgreSQL - dd3e8jafl17maj?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory@ec2-54-83-58-191.compute-1.amazonaws.com" uuid="65d053c1-cbba-4bb8-a230-7174346b3d22">
+  <component name="DataSourceManagerImpl" format="xml" hash="12692894">
+    <data-source source="LOCAL" name="PostgreSQL - marketing@localhost" uuid="4e3fcd99-0699-4496-a97f-1346ce9c20e7">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://ec2-54-83-58-191.compute-1.amazonaws.com:5432/dd3e8jafl17maj?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/marketing</jdbc-url>
       <libraries />
     </data-source>
   </component>

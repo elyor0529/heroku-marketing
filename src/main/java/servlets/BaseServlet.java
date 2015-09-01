@@ -1,6 +1,6 @@
 package servlets;
 
-import helpers.SettingsHelper;
+import utils.Settings;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletResponse;
@@ -11,10 +11,9 @@ import java.io.IOException;
  */
 public abstract class BaseServlet extends HttpServlet {
 
-
     protected void printJson(HttpServletResponse response, String json) {
 
-        response.setContentType(SettingsHelper.REST_TYPE);
+        response.setContentType(Settings.REST_TYPE);
 
         try {
 
@@ -30,7 +29,7 @@ public abstract class BaseServlet extends HttpServlet {
         String json = null;
 
         try {
-            json = SettingsHelper.GSON.toJson(exception);
+            json = Settings.getGson().toJson(exception);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -19,15 +19,10 @@
         <property name="connection.password">
             D3MZJpbWVnKEQcvN0V3YGMQGr5
         </property>
-        <mapping resource="mapping/CompaniesEntity.hbm.xml"/>
         <mapping class="db.CompaniesEntity"/>
-        <mapping resource="mapping/DevicesEntity.hbm.xml"/>
         <mapping class="db.DevicesEntity"/>
         <mapping class="db.NewsEntity"/>
-        <mapping resource="mapping/NewsEntity.hbm.xml"/>
         <mapping class="db.ProductsEntity"/>
-        <mapping resource="mapping/ProductsEntity.hbm.xml"/>
         <mapping class="db.UsersEntity"/>
-        <mapping resource="mapping/UsersEntity.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

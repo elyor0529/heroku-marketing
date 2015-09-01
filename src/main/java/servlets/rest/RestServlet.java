@@ -1,10 +1,10 @@
 package servlets.rest;
 
 import helpers.ConvertHelper;
-import helpers.SettingsHelper;
 import manager.ManagerImpl;
 import models.RestResponseModel;
 import servlets.BaseServlet;
+import utils.Settings;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -41,7 +41,7 @@ public abstract class RestServlet<T> extends BaseServlet {
 
                 final T t = manager.get(id);
 
-                json = SettingsHelper.GSON.toJson(t);
+                json = Settings.getGson().toJson(t);
             } else {
                 final RestResponseModel<T> t = new RestResponseModel<T>();
 
@@ -49,12 +49,12 @@ public abstract class RestServlet<T> extends BaseServlet {
                 t.setTotal(size);
 
                 final int limit = ConvertHelper.ToString(request.getParameter("limit")).isEmpty()
-                        ? SettingsHelper.PAGING.LIMIT
+                        ? Settings.PAGING.LIMIT
                         : ConvertHelper.ToInteger(request.getParameter("limit"));
                 t.setLimit(limit);
 
                 final int offset = ConvertHelper.ToString(request.getParameter("offset")).isEmpty()
-                        ? SettingsHelper.PAGING.OFFSET
+                        ? Settings.PAGING.OFFSET
                         : ConvertHelper.ToInteger(request.getParameter("offset"));
                 t.setOffset(offset);
 
@@ -62,7 +62,7 @@ public abstract class RestServlet<T> extends BaseServlet {
 
                 t.setItems(list);
 
-                json = SettingsHelper.GSON.toJson(t);
+                json = Settings.getGson().toJson(t);
             }
 
             printJson(response, json);

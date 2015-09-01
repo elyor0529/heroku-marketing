@@ -1,11 +1,13 @@
 <%@ page import="db.CompaniesEntity" %>
 <%@ page import="manager.CompanyManager" %>
 <%@ page import="manager.ManagerImpl" %>
-<%@ page import="java.util.List" %>
+<%@ page import="models.PagingResponseModel" %>
 
 <%
-    ManagerImpl<CompaniesEntity> manager = new CompanyManager();
-    List<CompaniesEntity> list = manager.getAll(0, 0);
+    final ManagerImpl<CompaniesEntity> manager = new CompanyManager();
+    final PagingResponseModel<CompaniesEntity> model = new PagingResponseModel<>(manager, request.getParameter("page"), request.getParameter("size"));
+
+    request.setAttribute("pager", model);
 %>
 <%--
   Created by IntelliJ IDEA.
@@ -17,6 +19,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <table class="table table-responsible" id="dataTable">
+
     <thead>
     <tr>
         <th>#</th>
@@ -26,21 +29,14 @@
         <th>Logo</th>
         <th>Site</th>
         <th>Phone</th>
+        <th></th>
     </tr>
     </thead>
+
     <tbody>
-    <%for (CompaniesEntity item : list) {%>
+    <%for (CompaniesEntity item : model.getItems()) {%>
     <tr>
-        <td>
-            <a href="#<%=item.getId()%>" class="btn btn-default">
-                View
-            </a>
-            <a href="#<%=item.getId()%>" class="btn btn-success">
-                Edit
-            </a>
-            <a href="#<%=item.getId()%>" class="btn btn-danger">
-                Delete
-            </a>
+        <td><%=item.getId()%>
         </td>
         <td><%=item.getName()%>
         </td>
@@ -58,7 +54,21 @@
         </td>
         <td><%=item.getPhone()%>
         </td>
+        <td>
+            <a href="#<%=item.getId()%>" class="btn btn-default">
+                View
+            </a>
+            <a href="#<%=item.getId()%>" class="btn btn-success">
+                Edit
+            </a>
+            <a href="#<%=item.getId()%>" class="btn btn-danger">
+                Delete
+            </a>
+        </td>
     </tr>
     <%}%>
     </tbody>
+
 </table>
+
+<jsp:include page="./../../partials/pager.jsp"/>

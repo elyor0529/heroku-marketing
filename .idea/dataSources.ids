@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="PostgreSQL - dd3e8jafl17maj?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory@ec2-54-83-58-191.compute-1.amazonaws.com" uuid="65d053c1-cbba-4bb8-a230-7174346b3d22">
+  <data-source name="PostgreSQL - marketing@localhost" uuid="4e3fcd99-0699-4496-a97f-1346ce9c20e7">
     <database-info product="PostgreSQL" version="9.4.4" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
       <identifier-quote-string>&quot;</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
-    <schema name="public" catalog="dd3e8jafl17maj"/>
-    <table name="companies" schema="public" catalog="dd3e8jafl17maj" type="TABLE">
+    <schema name="public" catalog="marketing"/>
+    <table name="companies" schema="public" catalog="marketing" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnY29tcGFuaWVzX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
       <column name="name" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
       <column name="key" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
@@ -17,11 +17,11 @@
       <column name="privacy_policy" sqlType="text" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="phone" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="companies_pkey" columns="id"/>
-      <exported-key name="news_company_id_fkey" table="news" schema="public" catalog="dd3e8jafl17maj" columns="company_id"/>
-      <exported-key name="products_company_id_fkey" table="products" schema="public" catalog="dd3e8jafl17maj" columns="company_id"/>
+      <exported-key name="news_company_id_fkey" table="news" schema="public" catalog="marketing" columns="company_id"/>
+      <exported-key name="products_company_id_fkey" table="products" schema="public" catalog="marketing" columns="company_id"/>
       <index name="unique_key" unique="true" columns="key"/>
     </table>
-    <table name="companies_id_seq" schema="public" catalog="dd3e8jafl17maj" type="SEQUENCE">
+    <table name="companies_id_seq" schema="public" catalog="marketing" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -33,7 +33,7 @@
       <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
       <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
-    <table name="devices" schema="public" catalog="dd3e8jafl17maj" type="TABLE">
+    <table name="devices" schema="public" catalog="marketing" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZGV2aWNlc19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
       <column name="brand" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="model" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
@@ -41,10 +41,10 @@
       <column name="company_key" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="unique_id" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="devices_pkey" columns="id"/>
-      <exported-key name="users_device_id_fkey" table="users" schema="public" catalog="dd3e8jafl17maj" columns="device_id"/>
+      <exported-key name="users_device_id_fkey" table="users" schema="public" catalog="marketing" columns="device_id"/>
       <index name="unique_unique_id" unique="true" columns="unique_id"/>
     </table>
-    <table name="devices_id_seq" schema="public" catalog="dd3e8jafl17maj" type="SEQUENCE">
+    <table name="devices_id_seq" schema="public" catalog="marketing" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -56,7 +56,7 @@
       <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
       <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
-    <table name="news" schema="public" catalog="dd3e8jafl17maj" type="TABLE">
+    <table name="news" schema="public" catalog="marketing" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnbmV3c19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
       <column name="photo_url" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
       <column name="modified_date" sqlType="timestamptz" precision="35" scale="6" nullable="false" jdbcType="93"/>
@@ -67,7 +67,7 @@
       <primary-key name="news_pkey" columns="id"/>
       <foreign-key name="news_company_id_fkey" columns="company_id" ref-table="companies" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
-    <table name="news_id_seq" schema="public" catalog="dd3e8jafl17maj" type="SEQUENCE">
+    <table name="news_id_seq" schema="public" catalog="marketing" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -79,7 +79,7 @@
       <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
       <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
-    <table name="products" schema="public" catalog="dd3e8jafl17maj" type="TABLE">
+    <table name="products" schema="public" catalog="marketing" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncHJvZHVjdHNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
       <column name="photo_url" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
       <column name="description" sqlType="text" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -89,7 +89,7 @@
       <primary-key name="products_pkey" columns="id"/>
       <foreign-key name="products_company_id_fkey" columns="company_id" ref-table="companies" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
-    <table name="products_id_seq" schema="public" catalog="dd3e8jafl17maj" type="SEQUENCE">
+    <table name="products_id_seq" schema="public" catalog="marketing" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -101,7 +101,7 @@
       <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
       <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
-    <table name="users" schema="public" catalog="dd3e8jafl17maj" type="TABLE">
+    <table name="users" schema="public" catalog="marketing" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndXNlcnNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
       <column name="full_name" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
       <column name="email" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
@@ -112,7 +112,7 @@
       <primary-key name="users_pkey" columns="id"/>
       <foreign-key name="users_device_id_fkey" columns="device_id" ref-table="devices" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
-    <table name="users_id_seq" schema="public" catalog="dd3e8jafl17maj" type="SEQUENCE">
+    <table name="users_id_seq" schema="public" catalog="marketing" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>

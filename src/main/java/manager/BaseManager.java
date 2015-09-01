@@ -1,13 +1,8 @@
 package manager;
 
-import db.CompaniesEntity;
-import javafx.scene.effect.Reflection;
+import helpers.HibernateFactoryHelper;
 import org.hibernate.Query;
-import org.hibernate.SQLQuery;
 import org.hibernate.Session;
-import sun.misc.ClassLoaderUtil;
-import sun.security.jca.GetInstance;
-import utils.HibernateFactory;
 
 import java.util.List;
 
@@ -23,7 +18,7 @@ public abstract class BaseManager<T> implements ManagerImpl<T> {
     public BaseManager(T t) {
         this.t = t;
         entityName = t.getClass().getName();
-        session = HibernateFactory.getSession();
+        session = HibernateFactoryHelper.getSession();
     }
 
     protected final Session getSession() {

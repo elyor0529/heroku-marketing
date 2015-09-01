@@ -1,10 +1,12 @@
 <%@ page import="db.NewsEntity" %>
 <%@ page import="manager.ManagerImpl" %>
 <%@ page import="manager.NewsManager" %>
-<%@ page import="java.util.List" %>
+<%@ page import="models.PagingResponseModel" %>
 <%
-    ManagerImpl<NewsEntity> manager = new NewsManager();
-    List<NewsEntity> list = manager.getAll(0, 0);
+    final ManagerImpl<NewsEntity> manager = new NewsManager();
+    final PagingResponseModel<NewsEntity> model = new PagingResponseModel<>(manager, request.getParameter("page"), request.getParameter("size"));
+
+    request.setAttribute("pager", model);
 %>
 <%--
   Created by IntelliJ IDEA.
@@ -16,6 +18,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <table class="table table-responsible" id="dataTable">
+
     <thead>
     <tr>
         <th>#</th>
@@ -23,21 +26,15 @@
         <th>Create/Modefied Date</th>
         <th>Photo</th>
         <th>Company Id</th>
+        <th></th>
     </tr>
     </thead>
+
     <tbody>
-    <%for (NewsEntity item : list) {%>
+    <%for (NewsEntity item : model.getItems()) {%>
     <tr>
         <td>
-            <a href="#<%=item.getId()%>" class="btn btn-default">
-                View
-            </a>
-            <a href="#<%=item.getId()%>" class="btn btn-success">
-                Edit
-            </a>
-            <a href="#<%=item.getId()%>" class="btn btn-danger">
-                Delete
-            </a>
+            <%=item.getId()%>
         </td>
         <td><%=item.getTitle()%>
         </td>
@@ -49,7 +46,21 @@
         <td>
             <%=item.getCompanyId()%>
         </td>
+        <td>
+            <a href="#<%=item.getId()%>" class="btn btn-default">
+                View
+            </a>
+            <a href="#<%=item.getId()%>" class="btn btn-success">
+                Edit
+            </a>
+            <a href="#<%=item.getId()%>" class="btn btn-danger">
+                Delete
+            </a>
+        </td>
     </tr>
     <%}%>
     </tbody>
+
 </table>
+
+<jsp:include page="./../../partials/pager.jsp"/>

@@ -4,10 +4,13 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
-          <unit-entry name="hibernate.cfg.xml" value="65d053c1-cbba-4bb8-a230-7174346b3d22" />
+          <unit-entry name="hibernate.cfg.xml" value="4e3fcd99-0699-4496-a97f-1346ce9c20e7" />
+          <unit-entry name="hibernate_locale.cfg.xml" value="4e3fcd99-0699-4496-a97f-1346ce9c20e7" />
+          <unit-entry name="hibernate_remote.cfg.xml" />
         </datasource-map>
         <naming-strategy-map />
-        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/hibernate.cfg.xml" />
+        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/hibernate_locale.cfg.xml" />
+        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/hibernate_remote.cfg.xml" />
       </configuration>
     </facet>
     <facet type="web" name="Web">

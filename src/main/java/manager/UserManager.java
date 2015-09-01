@@ -2,11 +2,8 @@ package manager;
 
 import db.UsersEntity;
 import helpers.ConvertHelper;
-import org.hibernate.*;
-import utils.HibernateFactory;
-
-import java.util.List;
-import java.util.stream.Collector;
+import org.hibernate.Query;
+import org.hibernate.Transaction;
 
 /**
  * Created by elyor on 8/9/2015.

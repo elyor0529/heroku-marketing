@@ -1,16 +1,6 @@
 package manager;
 
 import db.CompaniesEntity;
-import db.ProductsEntity;
-import db.UsersEntity;
-import helpers.ConvertHelper;
-import org.hibernate.Query;
-import org.hibernate.SQLQuery;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import utils.HibernateFactory;
-
-import java.util.List;
 
 /**
  * Created by elyor on 8/9/2015.

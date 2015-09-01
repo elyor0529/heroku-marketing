@@ -20,41 +20,7 @@
 
     <!-- The justified navigation menu is meant for single line per list item.
          Multiple lines will require custom code not provided by Bootstrap. -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="./../index.jsp">Marketing</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="./index.jsp">Rest</a></li>
-                    <li><a href="./../about.jsp">About</a></li>
-                    <li><a href="./../contact.jsp">Contact</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">Admin <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="./../admin/index.jsp">Home</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="./../admin/company.jsp">Company</a></li>
-                            <li><a href="./../admin/device.jsp">Device</a></li>
-                            <li><a href="./../admin/user.jsp">User</a></li>
-                            <li><a href="./../admin/news.jsp">News</a></li>
-                            <li><a href="./../admin/product.jsp">Product</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!--/.nav-collapse -->
-        </div>
-    </nav>
+    <jsp:include page="./../partials/menu.jsp"/>
 
     <!-- Example row of columns -->
     <div class="page-header">
@@ -66,58 +32,48 @@
     <p class="lead">Put content here</p>
 
     <div class="row">
-        <div class="col-lg-4">
-            <h2>Company</h2>
-
-            <p class="text-info">Put content here.</p>
-
-            <p><a class="btn btn-primary" href="./company?offset=10&limit=10" role="button">View
-                details &raquo;</a></p>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Get items</h3>
+            </div>
+            <div class="panel-body">
+                GET - {host}/rest/{table}?limit={limit}&offset={offset}
+            </div>
         </div>
-
-        <div class="col-lg-4">
-            <h2>Device</h2>
-
-            <p class="text-info">Put content here.</p>
-
-            <p><a class="btn btn-primary" href="./device?offset=10&limit=10" role="button">View details &raquo;</a>
-            </p>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">Get item</h3>
+            </div>
+            <div class="panel-body">
+                GET - {host}/rest/{table}?id={id}
+            </div>
         </div>
-
-        <div class="col-lg-4">
-            <h2>News</h2>
-
-            <p class="text-info">Put content here.</p>
-
-            <p><a class="btn btn-primary" href="./news?offset=10&limit=10" role="button">View details &raquo;</a>
-            </p>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">Insert</h3>
+            </div>
+            <div class="panel-body">
+                POST - {host}/rest/{table}
+            </div>
         </div>
-
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h3 class="panel-title">Update</h3>
+            </div>
+            <div class="panel-body">
+                PUT - {host}/rest/{table}
+            </div>
+        </div>
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <h3 class="panel-title">Delete</h3>
+            </div>
+            <div class="panel-body">
+                DELETE - {host}/rest/{table}
+            </div>
+        </div>
     </div>
 
-    <div class="row">
-        <div class="col-lg-4">
-            <h2>Product</h2>
-
-            <p class="text-info">Put content here.</p>
-
-            <p><a class="btn btn-primary" href="./product?offset=10&limit=10" role="button">View
-                details &raquo;</a></p>
-        </div>
-
-        <div class="col-lg-4">
-            <h2>User</h2>
-
-            <p class="text-info">Put content here.</p>
-
-            <p><a class="btn btn-primary" href="./user?offset=10&limit=10" role="button">View details &raquo;</a>
-            </p>
-        </div>
-
-        <div class="col-lg-4">
-        </div>
-
-    </div>
 </div>
 <jsp:include page="./../partials/footer.jsp"/>
 </body>

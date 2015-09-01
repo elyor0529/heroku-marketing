@@ -1,4 +1,4 @@
-package utils;
+package helpers;
 
 import java.security.SecureRandom;
 import java.util.Random;
@@ -7,7 +7,7 @@ import java.util.Random;
  * Created by Elyor on 8/11/2014.
  */
 
-public final class StringGenerator {
+public final class StringGeneratorHelper {
 
     public final static String generateString(int length) {
 

@@ -1,13 +1,6 @@
 package manager;
 
-import db.DevicesEntity;
 import db.NewsEntity;
-import org.hibernate.Query;
-import org.hibernate.SQLQuery;
-import org.hibernate.Session;
-import utils.HibernateFactory;
-
-import java.util.List;
 
 /**
  * Created by elyor on 8/9/2015.
