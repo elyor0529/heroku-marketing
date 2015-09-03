@@ -25,7 +25,7 @@ public class PagingResponseModel<T> {
                         ? Settings.PAGING.PAGE
                         : ConvertHelper.ToInteger(pageParam),
                 ConvertHelper.ToString(sizeParam).isEmpty()
-                        ? Settings.PAGING.COUNT
+                        ? Settings.PAGING.LIMIT
                         : ConvertHelper.ToInteger(sizeParam));
     }
 

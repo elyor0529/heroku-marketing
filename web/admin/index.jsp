@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <jsp:include page="./../partials/header.jsp"/>
+    <jsp:include page="/partials/header.jsp"/>
     <title>Marketing | Admin</title>
 </head>
 
@@ -20,7 +20,7 @@
 
     <!-- The justified navigation menu is meant for single line per list item.
          Multiple lines will require custom code not provided by Bootstrap. -->
-    <jsp:include page="./../partials/menu.jsp"/>
+    <jsp:include page="/partials/menu.jsp"/>
 
     <!-- Example row of columns -->
     <div class="page-header">
@@ -35,7 +35,7 @@
 
             <p class="text-info">Put content here.</p>
 
-            <p><a class="btn btn-primary" href="./company.jsp" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="company/index.jsp" role="button">View details &raquo;</a></p>
         </div>
 
         <div class="col-lg-4">
@@ -43,7 +43,7 @@
 
             <p class="text-info">Put content here.</p>
 
-            <p><a class="btn btn-primary" href="./device.jsp" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="device/index.jsp" role="button">View details &raquo;</a></p>
         </div>
 
         <div class="col-lg-4">
@@ -51,7 +51,7 @@
 
             <p class="text-info">Put content here.</p>
 
-            <p><a class="btn btn-primary" href="./news.jsp" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="news/index.jsp" role="button">View details &raquo;</a></p>
         </div>
 
     </div>
@@ -62,7 +62,7 @@
 
             <p class="text-info">Put content here.</p>
 
-            <p><a class="btn btn-primary" href="./product.jsp" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="product/index.jsp" role="button">View details &raquo;</a></p>
         </div>
 
         <div class="col-lg-4">
@@ -70,7 +70,7 @@
 
             <p class="text-info">Put content here.</p>
 
-            <p><a class="btn btn-primary" href="./user.jsp" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="user/index.jsp" role="button">View details &raquo;</a></p>
         </div>
 
         <div class="col-lg-4">
@@ -78,6 +78,6 @@
 
     </div>
 </div>
-<jsp:include page="./../partials/footer.jsp"/>
+<jsp:include page="/partials/footer.jsp"/>
 </body>
 </html>

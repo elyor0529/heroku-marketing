@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <jsp:include page="./../partials/header.jsp"/>
+    <jsp:include page="/partials/header.jsp"/>
     <title>Marketing | Rest</title>
 </head>
 
@@ -20,7 +20,7 @@
 
     <!-- The justified navigation menu is meant for single line per list item.
          Multiple lines will require custom code not provided by Bootstrap. -->
-    <jsp:include page="./../partials/menu.jsp"/>
+    <jsp:include page="/partials/menu.jsp"/>
 
     <!-- Example row of columns -->
     <div class="page-header">
@@ -75,6 +75,6 @@
     </div>
 
 </div>
-<jsp:include page="./../partials/footer.jsp"/>
+<jsp:include page="/partials/footer.jsp"/>
 </body>
 </html>

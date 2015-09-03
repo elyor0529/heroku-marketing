@@ -84,11 +84,10 @@
 
     <nav class="navbar navbar-right">
         <ul class="pagination pagination-lg">
-            <li class="<%=model.getPageSize()==10?"disabled":""%>"><a href="?page=1&size=10">10</a></li>
-            <li class="<%=model.getPageSize()==20?"disabled":""%>"><a href="?page=1&size=20">20</a></li>
+            <li class="<%=model.getPageSize()==25?"disabled":""%>"><a href="?page=1&size=25">25</a></li>
             <li class="<%=model.getPageSize()==50?"disabled":""%>"><a href="?page=1&size=50">50</a></li>
             <li class="<%=model.getPageSize()==100?"disabled":""%>"><a href="?page=1&size=100">100</a></li>
-            <li><a href="?page=0&size=0">All</a></li>
+            <li class="<%=model.getPageSize()==0?"disabled":""%>"><a href="?page=0&size=0">All</a></li>
         </ul>
     </nav>
     <div class="clearfix"></div>

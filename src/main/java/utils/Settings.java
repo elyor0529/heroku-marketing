@@ -17,7 +17,6 @@ public class Settings {
     //rest
     public static class PAGING {
         public static final int PAGE = 1;
-        public static final int COUNT = 10;
         public static final int LIMIT = 25;
         public static final int OFFSET = 0;
 

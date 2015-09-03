@@ -17,7 +17,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="./../index.jsp">Marketing</a>
+            <a class="navbar-brand" href="/index.jsp">Marketing</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -25,36 +25,36 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">Rest<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="./../rest/index.jsp">Home</a></li>
+                        <li><a href="/rest/index.jsp">Home</a></li>
                         <li role="separator" class="divider"></li>
                         <li>
-                            <a href="./../rest/company?offset=<%=Settings.PAGING.OFFSET%>&limit=<%=Settings.PAGING.LIMIT%>"
+                            <a href="/rest/company?offset=<%=Settings.PAGING.OFFSET%>&limit=<%=Settings.PAGING.LIMIT%>"
                                target="_blank">Company</a></li>
                         <li>
-                            <a href="./../rest/device?offset=<%=Settings.PAGING.OFFSET%>&limit=<%=Settings.PAGING.LIMIT%>"
+                            <a href="/rest/device?offset=<%=Settings.PAGING.OFFSET%>&limit=<%=Settings.PAGING.LIMIT%>"
                                target="_blank">Device</a></li>
-                        <li><a href="./../rest/user?offset=<%=Settings.PAGING.OFFSET%>&limit=<%=Settings.PAGING.LIMIT%>"
+                        <li><a href="/rest/user?offset=<%=Settings.PAGING.OFFSET%>&limit=<%=Settings.PAGING.LIMIT%>"
                                target="_blank">User</a></li>
-                        <li><a href="./../rest/news?offset=<%=Settings.PAGING.OFFSET%>&limit=<%=Settings.PAGING.LIMIT%>"
+                        <li><a href="/rest/news?offset=<%=Settings.PAGING.OFFSET%>&limit=<%=Settings.PAGING.LIMIT%>"
                                target="_blank">News</a></li>
                         <li>
-                            <a href="./../rest/product?offset=<%=Settings.PAGING.OFFSET%>&limit=<%=Settings.PAGING.LIMIT%>"
+                            <a href="/rest/product?offset=<%=Settings.PAGING.OFFSET%>&limit=<%=Settings.PAGING.LIMIT%>"
                                target="_blank">Product</a></li>
                     </ul>
                 </li>
-                <li><a href="./../about.jsp">About</a></li>
-                <li><a href="./../contact.jsp">Contact</a></li>
+                <li><a href="/about.jsp">About</a></li>
+                <li><a href="/contact.jsp">Contact</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">Admin <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="./../admin/index.jsp">Home</a></li>
+                        <li><a href="/admin/index.jsp">Home</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="./../admin/company.jsp">Company</a></li>
-                        <li><a href="./../admin/device.jsp">Device</a></li>
-                        <li><a href="./../admin/user.jsp">User</a></li>
-                        <li><a href="./../admin/news.jsp">News</a></li>
-                        <li><a href="./../admin/product.jsp">Product</a></li>
+                        <li><a href="/admin/company/index.jsp">Company</a></li>
+                        <li><a href="/admin/device/index.jsp">Device</a></li>
+                        <li><a href="/admin/user/index.jsp">User</a></li>
+                        <li><a href="/admin/news/index.jsp">News</a></li>
+                        <li><a href="/admin/product/index.jsp">Product</a></li>
                     </ul>
                 </li>
             </ul>
