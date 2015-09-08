@@ -1,9 +1,9 @@
 package servlets.rest;
 
-import helpers.ConvertHelper;
 import helpers.FactoryHelper;
 import manager.ManagerImpl;
 import models.RestResponseModel;
+import org.apache.commons.beanutils.converters.IntegerConverter;
 import servlets.BaseServlet;
 import utils.Settings;
 
@@ -34,9 +34,7 @@ public abstract class RestServlet<T> extends BaseServlet {
         try {
             String json = null;
 
-            final int id = ConvertHelper.ToString(request.getParameter("id")).isEmpty()
-                    ? 0
-                    : ConvertHelper.ToInteger(request.getParameter("id"));
+            final int id = (Integer) new IntegerConverter(0).convert(String.class, request.getParameter("id"));
 
             if (id > 0) {
 
@@ -49,14 +47,10 @@ public abstract class RestServlet<T> extends BaseServlet {
                 final int size = manager.getSize();
                 t.setTotal(size);
 
-                final int limit = ConvertHelper.ToString(request.getParameter("limit")).isEmpty()
-                        ? Settings.PAGING.LIMIT
-                        : ConvertHelper.ToInteger(request.getParameter("limit"));
+                final int limit = (Integer) new IntegerConverter(Settings.PAGING.LIMIT).convert(String.class, request.getParameter("limit"));
                 t.setLimit(limit);
 
-                final int offset = ConvertHelper.ToString(request.getParameter("offset")).isEmpty()
-                        ? Settings.PAGING.OFFSET
-                        : ConvertHelper.ToInteger(request.getParameter("offset"));
+                final int offset = (Integer) new IntegerConverter(Settings.PAGING.OFFSET).convert(String.class, request.getParameter("offset"));
                 t.setOffset(offset);
 
                 final List<T> list = manager.getAll(limit, offset);

@@ -1,7 +1,7 @@
 package models;
 
-import helpers.ConvertHelper;
 import manager.ManagerImpl;
+import org.apache.commons.beanutils.converters.IntegerConverter;
 import utils.Settings;
 
 import java.util.List;
@@ -21,12 +21,8 @@ public class PagingResponseModel<T> {
 
     public PagingResponseModel(ManagerImpl<T> manager, String pageParam, String sizeParam) {
         this(manager,
-                ConvertHelper.ToString(pageParam).isEmpty()
-                        ? Settings.PAGING.PAGE
-                        : ConvertHelper.ToInteger(pageParam),
-                ConvertHelper.ToString(sizeParam).isEmpty()
-                        ? Settings.PAGING.LIMIT
-                        : ConvertHelper.ToInteger(sizeParam));
+                (Integer) new IntegerConverter(Settings.PAGING.PAGE).convert(String.class, pageParam),
+                (Integer) new IntegerConverter(Settings.PAGING.LIMIT).convert(String.class, sizeParam));
     }
 
     public PagingResponseModel(ManagerImpl<T> manager, int currentPage, int pageSize) {
@@ -38,7 +34,6 @@ public class PagingResponseModel<T> {
         this.nextPage = (this.currentPage > 0 && this.currentPage < this.pageCount - 1) ? this.currentPage + 1 : this.pageCount - 1;
         this.items = manager.getAll(this.pageSize, this.pageSize * (this.currentPage - 1));
     }
-
 
     public int getTotalRecord() {
         return totalRecord;
@@ -95,4 +90,5 @@ public class PagingResponseModel<T> {
     public void setItems(List<T> items) {
         this.items = items;
     }
+
 }

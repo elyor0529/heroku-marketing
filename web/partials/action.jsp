@@ -1,4 +1,4 @@
-<%@ page import="helpers.ConvertHelper" %>
+<%@ page import="org.apache.commons.beanutils.converters.IntegerConverter" %>
 <%--
   Created by IntelliJ IDEA.
   User: elyor
@@ -8,7 +8,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    final int id = ConvertHelper.ToInteger(request.getParameter("id"));
+    final int id = (Integer) new IntegerConverter(0).convert(String.class, request.getParameter("id"));
 %>
 <p>
     <a class="btn btn-default" href="view.jsp?id=<%=id%>"><i

@@ -21,8 +21,10 @@ public class FactoryHelper {
 
     //hibernate
     private static SessionFactory sessionFactory;
+
     //resource
     private static ResourceBundle resourceBundle;
+
     //json
     private static Gson gson;
 

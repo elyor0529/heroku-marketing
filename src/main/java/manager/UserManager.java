@@ -1,7 +1,6 @@
 package manager;
 
 import db.UsersEntity;
-import helpers.ConvertHelper;
 import org.hibernate.Query;
 import org.hibernate.Transaction;
 
@@ -33,7 +32,7 @@ public class UserManager extends BaseManager<UsersEntity> {
                 final Object lastObj = getSession().createSQLQuery("SELECT LAST_INSERT_ID();")
                         .uniqueResult();
 
-                result = ConvertHelper.ToInteger(lastObj.toString());
+                result = (Integer) lastObj;
             }
 
             transaction.commit();

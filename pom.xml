@@ -8,17 +8,5 @@
     <artifactId>heroku-marketing</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>com.heroku.sdk</groupId>
-                <artifactId>heroku-maven-plugin</artifactId>
-                <version>0.4.4</version>
-                <configuration>
-                    <appName>heroku-postgres-99811931</appName>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
