@@ -43,7 +43,7 @@ public class CompanyManager extends BaseManager<CompaniesEntity> {
     }
 
     @Override
-    public boolean update(CompaniesEntity t) {
+    public boolean update(int id, CompaniesEntity t) {
         boolean result = false;
         final Transaction transaction = getSession().getTransaction();
 
@@ -59,7 +59,7 @@ public class CompanyManager extends BaseManager<CompaniesEntity> {
                     "site_url=:site_url," +
                     "privacy_policy=:privacy_policy ," +
                     "phone=:phone " +
-                    "WHERE id=:id;";
+                    "WHERE id=" + id + ";";
             final Query query = getSession().createSQLQuery(sql);
 
             query.setProperties(t);

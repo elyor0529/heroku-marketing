@@ -43,7 +43,7 @@ public class NewsManager extends BaseManager<NewsEntity> {
     }
 
     @Override
-    public boolean update(NewsEntity t) {
+    public boolean update(int id, NewsEntity t) {
         boolean result = false;
         final Transaction transaction = getSession().getTransaction();
 
@@ -57,7 +57,7 @@ public class NewsManager extends BaseManager<NewsEntity> {
                     "content=:content," +
                     "title=:title, " +
                     "company_id=:companyId " +
-                    "WHERE id=:id;";
+                    "WHERE id=" + id + ";";
             final Query query = getSession().createSQLQuery(sql);
 
             query.setProperties(t);

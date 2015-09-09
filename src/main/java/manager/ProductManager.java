@@ -43,7 +43,7 @@ public class ProductManager extends BaseManager<ProductsEntity> {
     }
 
     @Override
-    public boolean update(ProductsEntity t) {
+    public boolean update(int id, ProductsEntity t) {
         boolean result = false;
         final Transaction transaction = getSession().getTransaction();
 
@@ -56,7 +56,7 @@ public class ProductManager extends BaseManager<ProductsEntity> {
                     "name=:name," +
                     "mark=:mark," +
                     "company_id=:companyId " +
-                    "WHERE id=:id;";
+                    "WHERE id=" + id + ";";
             final Query query = getSession().createSQLQuery(sql);
 
             query.setProperties(t);

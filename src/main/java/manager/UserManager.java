@@ -43,7 +43,7 @@ public class UserManager extends BaseManager<UsersEntity> {
     }
 
     @Override
-    public boolean update(UsersEntity t) {
+    public boolean update(int id, UsersEntity t) {
         boolean result = false;
         final Transaction transaction = getSession().getTransaction();
 
@@ -57,7 +57,7 @@ public class UserManager extends BaseManager<UsersEntity> {
                     "gender=:gender," +
                     "birthday=:birthDay," +
                     "promotional_code=:promotionalCode " +
-                    "WHERE id=:id;";
+                    "WHERE id=" + id + ";";
             final Query query = getSession().createSQLQuery(sql);
 
             query.setProperties(t);

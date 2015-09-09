@@ -42,7 +42,7 @@ public class DeviceManager extends BaseManager<DevicesEntity> {
     }
 
     @Override
-    public boolean update(DevicesEntity t) {
+    public boolean update(int id, DevicesEntity t) {
         boolean result = false;
         final Transaction transaction = getSession().getTransaction();
 
@@ -55,7 +55,7 @@ public class DeviceManager extends BaseManager<DevicesEntity> {
                     "token=:token," +
                     "company_key=:companyKey," +
                     "unique_id=:uniqueId " +
-                    "WHERE id=:id;";
+                    "WHERE id=" + id + ";";
             final Query query = getSession().createSQLQuery(sql);
 
             query.setProperties(t);

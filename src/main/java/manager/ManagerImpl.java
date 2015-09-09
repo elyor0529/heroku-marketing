@@ -15,7 +15,7 @@ public interface ManagerImpl<T> {
 
     boolean insert(T t);
 
-    boolean update(T t);
+    boolean update(int id, T t);
 
     boolean delete(int id);
 

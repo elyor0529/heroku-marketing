@@ -1,6 +1,5 @@
 package servlets.rest;
 
-import com.google.gson.Gson;
 import helpers.FactoryHelper;
 import manager.ManagerImpl;
 import models.LimitationResponseModel;
@@ -34,11 +33,11 @@ public abstract class RestServlet<T> extends BaseServlet {
         final StringBuffer jb = new StringBuffer();
 
         String line;
-        while ((line = reader.readLine()) != null)
+        while ((line = reader.readLine()) != null) {
             jb.append(line);
+        }
 
-        final Gson gson = FactoryHelper.getGson();
-        final T entity = (T) gson.fromJson(jb.toString(), t.getClass());
+        final T entity = (T) FactoryHelper.getGson().fromJson(jb.toString(), t.getClass());
 
         return entity;
     }
@@ -139,9 +138,10 @@ public abstract class RestServlet<T> extends BaseServlet {
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             RestResponseModel model;
+            final int id = (Integer) new IntegerConverter(0).convert(String.class, request.getParameter("id"));
             final T entity = getEntity(request);
 
-            if (manager.update(entity)) {
+            if (manager.update(id, entity)) {
                 model = new RestResponseModel("OK", 200);
             } else {
                 model = new RestResponseModel("Error", 503);
