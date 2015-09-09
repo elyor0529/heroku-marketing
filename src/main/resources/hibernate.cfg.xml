@@ -5,12 +5,29 @@
 <hibernate-configuration>
     <session-factory>
 
-        <!--connection-->
+        <!--locale-->
         <property name="connection.url">jdbc:postgresql://localhost:5432/marketing</property>
         <property name="connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         <property name="connection.username">postgres</property>
         <property name="connection.password">web@1234</property>
+
+        <!--remove-->
+        <!--<property name="connection.url">-->
+        <!--jdbc:postgresql://ec2-54-83-58-191.compute-1.amazonaws.com:5432/dd3e8jafl17maj?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory-->
+        <!--</property>-->
+        <!--<property name="connection.driver_class">-->
+        <!--org.postgresql.Driver-->
+        <!--</property>-->
+        <!--<property name="hibernate.dialect">-->
+        <!--org.hibernate.dialect.PostgreSQLDialect-->
+        <!--</property>-->
+        <!--<property name="connection.username">-->
+        <!--curcdgwhleqjmi-->
+        <!--</property>-->
+        <!--<property name="connection.password">-->
+        <!--D3MZJpbWVnKEQcvN0V3YGMQGr5-->
+        <!--</property>-->
 
         <!--class-->
         <mapping class="db.CompaniesEntity"/>

@@ -14,8 +14,8 @@ public class NewsManager extends BaseManager<NewsEntity> {
     }
 
     @Override
-    public int insert(NewsEntity t) {
-        int result = 0;
+    public boolean insert(NewsEntity t) {
+        boolean result = false;
         final Transaction transaction = getSession().getTransaction();
 
         try {
@@ -28,12 +28,7 @@ public class NewsManager extends BaseManager<NewsEntity> {
 
             query.setProperties(t);
 
-            if (query.executeUpdate() > 0) {
-                final Object lastObj = getSession().createSQLQuery("SELECT LAST_INSERT_ID();")
-                        .uniqueResult();
-
-                result = (Integer) lastObj;
-            }
+            result = query.executeUpdate() > 0;
 
             transaction.commit();
 

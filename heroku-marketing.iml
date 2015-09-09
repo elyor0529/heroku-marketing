@@ -6,10 +6,9 @@
         <datasource-map>
           <unit-entry name="hibernate.cfg.xml" value="4e3fcd99-0699-4496-a97f-1346ce9c20e7" />
           <unit-entry name="hibernate_locale.cfg.xml" value="4e3fcd99-0699-4496-a97f-1346ce9c20e7" />
-          <unit-entry name="hibernate_remote.cfg.xml" />
         </datasource-map>
         <naming-strategy-map />
-        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/hibernate_locale.cfg.xml" />
+        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/hibernate.cfg.xml" />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/hibernate_remote.cfg.xml" />
       </configuration>
     </facet>
@@ -27,7 +26,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">

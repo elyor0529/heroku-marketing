@@ -1,8 +1,5 @@
 package manager;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-
 import java.util.List;
 
 /**
@@ -16,7 +13,7 @@ public interface ManagerImpl<T> {
 
     T get(int id);
 
-    int insert(T t);
+    boolean insert(T t);
 
     boolean update(T t);
 

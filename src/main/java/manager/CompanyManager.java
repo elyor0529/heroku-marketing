@@ -14,8 +14,8 @@ public class CompanyManager extends BaseManager<CompaniesEntity> {
     }
 
     @Override
-    public int insert(CompaniesEntity t) {
-        int result = 0;
+    public boolean insert(CompaniesEntity t) {
+        boolean result = false;
         final Transaction transaction = getSession().getTransaction();
 
         try {
@@ -23,17 +23,12 @@ public class CompanyManager extends BaseManager<CompaniesEntity> {
             transaction.begin();
 
             final String sql = "INSERT INTO companies(name,key,currency,logo_url,about,site_url,privacy_policy,phone) " +
-                    "VALUES(:name,:key,:currency,:logo_url,:about,:site_url,:privacy_policy,:phone);";
+                    "VALUES(:name,:key,:currency,:logoUrl,:about,:siteUrl,:privacyPolicy,:phone);";
             final Query query = getSession().createSQLQuery(sql);
 
             query.setProperties(t);
 
-            if (query.executeUpdate() > 0) {
-                final Object lastObj = getSession().createSQLQuery("SELECT LAST_INSERT_ID();")
-                        .uniqueResult();
-
-                result = (Integer) lastObj;
-            }
+            result = query.executeUpdate() > 0;
 
             transaction.commit();
 

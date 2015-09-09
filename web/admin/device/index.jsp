@@ -1,10 +1,10 @@
 <%@ page import="db.DevicesEntity" %>
 <%@ page import="manager.DeviceManager" %>
 <%@ page import="manager.ManagerImpl" %>
-<%@ page import="models.PagingResponseModel" %>
+<%@ page import="models.PaginationResponseModel" %>
 <%
     final ManagerImpl<DevicesEntity> manager = new DeviceManager();
-    final PagingResponseModel<DevicesEntity> model = new PagingResponseModel<>(manager, request.getParameter("page"), request.getParameter("size"));
+    final PaginationResponseModel<DevicesEntity> model = new PaginationResponseModel<>(manager, request.getParameter("page"), request.getParameter("size"));
 
     request.setAttribute("pager", model);
 %>

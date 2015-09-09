@@ -1,4 +1,4 @@
-<%@ page import="models.PagingResponseModel" %>
+<%@ page import="models.PaginationResponseModel" %>
 <%--
   Created by IntelliJ IDEA.
   User: elyor
@@ -8,7 +8,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    final PagingResponseModel<Object> model = (PagingResponseModel<Object>) request.getAttribute("pager");
+    final PaginationResponseModel<Object> model = (PaginationResponseModel<Object>) request.getAttribute("pager");
 %>
 <div class="row">
 

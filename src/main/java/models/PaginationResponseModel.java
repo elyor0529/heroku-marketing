@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by elyor on 9/1/2015.
  */
-public class PagingResponseModel<T> {
+public class PaginationResponseModel<T> {
 
     private int totalRecord;
     private int pageSize;
@@ -19,13 +19,13 @@ public class PagingResponseModel<T> {
     private int pageCount;
     private List<T> items;
 
-    public PagingResponseModel(ManagerImpl<T> manager, String pageParam, String sizeParam) {
+    public PaginationResponseModel(ManagerImpl<T> manager, String pageParam, String sizeParam) {
         this(manager,
                 (Integer) new IntegerConverter(Settings.PAGING.PAGE).convert(String.class, pageParam),
                 (Integer) new IntegerConverter(Settings.PAGING.LIMIT).convert(String.class, sizeParam));
     }
 
-    public PagingResponseModel(ManagerImpl<T> manager, int currentPage, int pageSize) {
+    public PaginationResponseModel(ManagerImpl<T> manager, int currentPage, int pageSize) {
         this.currentPage = currentPage;
         this.pageSize = pageSize;
         this.totalRecord = manager.getSize();

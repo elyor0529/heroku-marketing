@@ -2,55 +2,55 @@ package models;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
 /**
- * Created by elyor on 8/31/2015.
+ * Created by elyor on 9/9/2015.
  */
-public class RestResponseModel<T> {
+public class RestResponseModel {
 
-    @SerializedName("total")
-    private int total;
+    @SerializedName("object")
 
-    @SerializedName("limit")
-    private int limit;
+    private Object object;
 
-    @SerializedName("offset")
-    private int offset;
+    @SerializedName("status")
+    private String status;
 
-    @SerializedName("items")
-    private List<T> items;
+    @SerializedName("code")
+    private int code;
 
-    public int getTotal() {
-        return total;
+    public RestResponseModel(Object object, String status, int code) {
+        this(status, code);
+
+        this.object = object;
     }
 
-    public void setTotal(int total) {
-        this.total = total;
+    public RestResponseModel(String status, int code) {
+        this.status = status;
+
+        this.code = code;
     }
 
-    public int getLimit() {
-        return limit;
+    public Object getObject() {
+        return object;
     }
 
-    public void setLimit(int limit) {
-        this.limit = limit;
+    public void setObject(Object object) {
+        this.object = object;
     }
 
-    public int getOffset() {
-        return offset;
+    public String getStatus() {
+        return status;
     }
 
-    public void setOffset(int offset) {
-        this.offset = offset;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public List<T> getItems() {
-        return items;
+    public int getCode() {
+        return code;
     }
 
-    public void setItems(List<T> items) {
-        this.items = items;
+    public void setCode(int code) {
+        this.code = code;
     }
 
 }

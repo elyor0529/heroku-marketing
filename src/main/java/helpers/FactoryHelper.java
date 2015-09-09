@@ -33,11 +33,7 @@ public class FactoryHelper {
             try {
                 Configuration configuration = new Configuration();
 
-                if (Settings.SERVER_IS_LOCALE) {
-                    configuration.configure("hibernate_locale.cfg.xml");
-                } else {
-                    configuration.configure("hibernate_remote.cfg.xml");
-                }
+                configuration.configure("hibernate.cfg.xml");
 
                 ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
                 sessionFactory = configuration.buildSessionFactory(serviceRegistry);

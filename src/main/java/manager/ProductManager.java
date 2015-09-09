@@ -14,8 +14,8 @@ public class ProductManager extends BaseManager<ProductsEntity> {
     }
 
     @Override
-    public int insert(ProductsEntity t) {
-        int result = 0;
+    public boolean insert(ProductsEntity t) {
+        boolean result = false;
         final Transaction transaction = getSession().getTransaction();
 
         try {
@@ -28,12 +28,7 @@ public class ProductManager extends BaseManager<ProductsEntity> {
 
             query.setProperties(t);
 
-            if (query.executeUpdate() > 0) {
-                final Object lastObj = getSession().createSQLQuery("SELECT LAST_INSERT_ID();")
-                        .uniqueResult();
-
-                result = (Integer) lastObj;
-            }
+            result = query.executeUpdate() > 0;
 
             transaction.commit();
 

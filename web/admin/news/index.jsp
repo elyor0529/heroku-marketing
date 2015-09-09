@@ -1,10 +1,10 @@
 <%@ page import="db.NewsEntity" %>
 <%@ page import="manager.ManagerImpl" %>
 <%@ page import="manager.NewsManager" %>
-<%@ page import="models.PagingResponseModel" %>
+<%@ page import="models.PaginationResponseModel" %>
 <%
     final ManagerImpl<NewsEntity> manager = new NewsManager();
-    final PagingResponseModel<NewsEntity> model = new PagingResponseModel<>(manager, request.getParameter("page"), request.getParameter("size"));
+    final PaginationResponseModel<NewsEntity> model = new PaginationResponseModel<>(manager, request.getParameter("page"), request.getParameter("size"));
 
     request.setAttribute("pager", model);
 %>

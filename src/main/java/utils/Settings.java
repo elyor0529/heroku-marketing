@@ -9,8 +9,7 @@ public class Settings {
 
     //locale
     public static final Locale LOCALE = Locale.US;
-    //host
-    public static final boolean SERVER_IS_LOCALE = true;
+
     //mime types
     public static final String REST_TYPE = "application/json";
 
