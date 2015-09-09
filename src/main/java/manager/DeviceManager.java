@@ -23,7 +23,7 @@ public class DeviceManager extends BaseManager<DevicesEntity> {
             transaction.begin();
 
             final String sql = "INSERT INTO devices(brand,model,token,company_key,unique_id) " +
-                    "VALUES(:brand,:model,:token,:company_key,:unique_id);";
+                    "VALUES(:brand,:model,:token,:companyKey,:uniqueId);";
             final Query query = getSession().createSQLQuery(sql);
 
             query.setProperties(t);
@@ -53,8 +53,8 @@ public class DeviceManager extends BaseManager<DevicesEntity> {
             final String sql = "UPDATE devices SET brand=:brand," +
                     "model=:model," +
                     "token=:token," +
-                    "company_key=:company_key," +
-                    "unique_id=:unique_id " +
+                    "company_key=:companyKey," +
+                    "unique_id=:uniqueId " +
                     "WHERE id=:id;";
             final Query query = getSession().createSQLQuery(sql);
 

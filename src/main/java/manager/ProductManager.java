@@ -23,7 +23,7 @@ public class ProductManager extends BaseManager<ProductsEntity> {
             transaction.begin();
 
             final String sql = "INSERT INTO products(photo_url,description,name,mark,company_id) " +
-                    "VALUES(:photo_url,:description,:name,:mark,:company_id);";
+                    "VALUES(:photoUrl,:description,:name,:mark,:companyId);";
             final Query query = getSession().createSQLQuery(sql);
 
             query.setProperties(t);
@@ -51,11 +51,11 @@ public class ProductManager extends BaseManager<ProductsEntity> {
 
             transaction.begin();
 
-            final String sql = "UPDATE products SET photo_url=:photo_url," +
+            final String sql = "UPDATE products SET photo_url=:photoUrl," +
                     "description=:description," +
                     "name=:name," +
                     "mark=:mark," +
-                    "company_id=:company_id " +
+                    "company_id=:companyId " +
                     "WHERE id=:id;";
             final Query query = getSession().createSQLQuery(sql);
 

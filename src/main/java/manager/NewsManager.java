@@ -23,7 +23,7 @@ public class NewsManager extends BaseManager<NewsEntity> {
             transaction.begin();
 
             final String sql = "INSERT INTO news(photo_url,modified_date,created_date,content,title,company_id) " +
-                    "VALUES(:photo_url,:modified_date,:created_date,:content,:title,:company_id);";
+                    "VALUES(:photoUrl,:modifiedDate,:createdDate,:content,:title,:companyId);";
             final Query query = getSession().createSQLQuery(sql);
 
             query.setProperties(t);
@@ -51,12 +51,12 @@ public class NewsManager extends BaseManager<NewsEntity> {
 
             transaction.begin();
 
-            final String sql = "UPDATE news SET photo_url=:photo_url," +
-                    "modified_date=:modified_date," +
-                    "created_date=:created_date," +
+            final String sql = "UPDATE news SET photo_url=:photoUrl," +
+                    "modified_date=:modifiedDate," +
+                    "created_date=:createdDate," +
                     "content=:content," +
                     "title=:title, " +
-                    "company_id=:company_id " +
+                    "company_id=:companyId " +
                     "WHERE id=:id;";
             final Query query = getSession().createSQLQuery(sql);
 
