@@ -1,6 +1,5 @@
 package servlets;
 
-import helpers.FactoryHelper;
 import utils.Settings;
 
 import javax.servlet.http.HttpServlet;
@@ -18,12 +17,4 @@ public abstract class BaseServlet extends HttpServlet {
         response.getWriter().write(json);
 
     }
-
-    protected void printError(HttpServletResponse response, Exception exception) throws IOException {
-
-        String json = FactoryHelper.getGson().toJson(exception);
-
-        printJson(response, json);
-    }
-
 }

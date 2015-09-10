@@ -11,6 +11,7 @@ import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 import utils.Settings;
 
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
 /**
@@ -65,6 +66,8 @@ public class FactoryHelper {
                     .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
                     .setPrettyPrinting()
                     .serializeNulls()
+                    .serializeSpecialFloatingPointValues()
+                    .setDateFormat(SimpleDateFormat.DATE_FIELD)
                     .create();
         }
 

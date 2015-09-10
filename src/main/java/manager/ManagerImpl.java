@@ -7,16 +7,16 @@ import java.util.List;
  */
 public interface ManagerImpl<T> {
 
-    List<T> getAll(int limit, int offset);
+    List<T> getAll(int limit, int offset) throws Exception;
 
-    int getSize();
+    int getSize() throws Exception;
 
-    T get(int id);
+    T get(int id) throws Exception;
 
-    boolean insert(T t);
+    int insert(T t) throws Exception;
 
-    boolean update(int id, T t);
+    boolean update(int id, T t) throws Exception;
 
-    boolean delete(int id);
+    boolean delete(int id) throws Exception;
 
 }

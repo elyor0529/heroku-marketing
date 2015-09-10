@@ -19,13 +19,13 @@ public class PaginationResponseModel<T> {
     private int pageCount;
     private List<T> items;
 
-    public PaginationResponseModel(ManagerImpl<T> manager, String pageParam, String sizeParam) {
+    public PaginationResponseModel(ManagerImpl<T> manager, String pageParam, String sizeParam) throws Exception {
         this(manager,
                 (Integer) new IntegerConverter(Settings.PAGING.PAGE).convert(String.class, pageParam),
                 (Integer) new IntegerConverter(Settings.PAGING.LIMIT).convert(String.class, sizeParam));
     }
 
-    public PaginationResponseModel(ManagerImpl<T> manager, int currentPage, int pageSize) {
+    public PaginationResponseModel(ManagerImpl<T> manager, int currentPage, int pageSize) throws Exception {
         this.currentPage = currentPage;
         this.pageSize = pageSize;
         this.totalRecord = manager.getSize();

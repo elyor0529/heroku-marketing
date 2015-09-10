@@ -52,17 +52,19 @@ public abstract class RestServlet<T> extends BaseServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RestResponseModel model;
 
         try {
-            String json = null;
 
+            model = new RestResponseModel("OK", 200, "GET");
             final int id = (Integer) new IntegerConverter(0).convert(String.class, request.getParameter("id"));
 
             if (id > 0) {
 
                 final T t = manager.get(id);
 
-                json = FactoryHelper.getGson().toJson(t);
+                model.setData(t);
+
             } else {
                 final LimitationResponseModel<T> t = new LimitationResponseModel<T>();
 
@@ -79,81 +81,103 @@ public abstract class RestServlet<T> extends BaseServlet {
 
                 t.setItems(list);
 
-                json = FactoryHelper.getGson().toJson(t);
+                model.setData(t);
             }
 
-            printJson(response, json);
-
         } catch (Exception e) {
-            printError(response, e);
+
+            model = new RestResponseModel("ERROR", 404, "GET");
+            model.setData(e);
+
         }
 
-    }
+        final String json = FactoryHelper.getGson().toJson(model);
 
-    @Override
-    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        try {
-            RestResponseModel model;
-            final int id = (Integer) new IntegerConverter(0).convert(String.class, request.getParameter("id"));
-
-            if (manager.delete(id)) {
-                model = new RestResponseModel("OK", 200);
-            } else {
-                model = new RestResponseModel("Error", 503);
-            }
-
-            final String json = FactoryHelper.getGson().toJson(model);
-
-            printJson(response, json);
-
-        } catch (Exception e) {
-            printError(response, e);
-        }
+        printJson(response, json);
 
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try {
-            RestResponseModel model;
-            final T entity = getEntity(request);
+        RestResponseModel model;
 
-            if (manager.insert(entity)) {
-                model = new RestResponseModel("OK", 200);
+        try {
+            T entity = getEntity(request);
+            final int id = manager.insert(entity);
+
+            if (id > 0) {
+                entity = manager.get(id);
+                model = new RestResponseModel("OK", 200, "POST");
+                model.setData(entity);
             } else {
-                model = new RestResponseModel("Error", 503);
+                model = new RestResponseModel("FAILURE", 503, "POST");
             }
 
-            final String json = FactoryHelper.getGson().toJson(model);
-
-            printJson(response, json);
         } catch (Exception e) {
-            printError(response, e);
+
+            model = new RestResponseModel("ERROR", 404, "GET");
+            model.setData(e);
+
         }
+
+        final String json = FactoryHelper.getGson().toJson(model);
+
+        printJson(response, json);
 
     }
 
     @Override
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RestResponseModel model;
+
         try {
-            RestResponseModel model;
+            T entity = getEntity(request);
             final int id = (Integer) new IntegerConverter(0).convert(String.class, request.getParameter("id"));
-            final T entity = getEntity(request);
 
             if (manager.update(id, entity)) {
-                model = new RestResponseModel("OK", 200);
+                entity = manager.get(id);
+                model = new RestResponseModel("OK", 200, "POST");
+                model.setData(entity);
             } else {
-                model = new RestResponseModel("Error", 503);
+                model = new RestResponseModel("FAILURE", 503, "POST");
             }
-
-            final String json = FactoryHelper.getGson().toJson(model);
-
-            printJson(response, json);
 
         } catch (Exception e) {
 
-            printError(response, e);
+            model = new RestResponseModel("ERROR", 404, "GET");
+            model.setData(e);
+
         }
+
+        final String json = FactoryHelper.getGson().toJson(model);
+
+        printJson(response, json);
+
     }
+
+    @Override
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RestResponseModel model;
+
+        try {
+            final int id = (Integer) new IntegerConverter(0).convert(String.class, request.getParameter("id"));
+
+            if (manager.delete(id)) {
+                model = new RestResponseModel("OK", 200, "DELETE");
+            } else {
+                model = new RestResponseModel("FAILURE", 503, "DELETE");
+            }
+
+        } catch (Exception e) {
+
+            model = new RestResponseModel("ERROR", 404, "GET");
+            model.setData(e);
+
+        }
+
+        final String json = FactoryHelper.getGson().toJson(model);
+
+        printJson(response, json);
+    }
+
 }

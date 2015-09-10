@@ -14,8 +14,8 @@ public class UserManager extends BaseManager<UsersEntity> {
     }
 
     @Override
-    public boolean insert(UsersEntity t) {
-        boolean result = false;
+    public int insert(UsersEntity t) throws Exception {
+        int result = 0;
         final Transaction transaction = getSession().getTransaction();
 
         try {
@@ -28,22 +28,27 @@ public class UserManager extends BaseManager<UsersEntity> {
 
             query.setProperties(t);
 
-            result = query.executeUpdate() > 0;
+            if (query.executeUpdate() > 0) {
+                result = (Integer) getSession().createSQLQuery("SELECT max(id) FROM users;")
+                        .uniqueResult();
+            }
 
             transaction.commit();
 
-        } catch (Exception ext) {
+        } catch (Exception e) {
 
             transaction.rollback();
 
-            ext.printStackTrace();
+            e.printStackTrace();
+
+            throw e;
         }
 
         return result;
     }
 
     @Override
-    public boolean update(int id, UsersEntity t) {
+    public boolean update(int id, UsersEntity t) throws Exception {
         boolean result = false;
         final Transaction transaction = getSession().getTransaction();
 
@@ -66,38 +71,41 @@ public class UserManager extends BaseManager<UsersEntity> {
 
             transaction.commit();
 
-        } catch (Exception ext) {
+        } catch (Exception e) {
 
             transaction.rollback();
 
-            ext.printStackTrace();
+            e.printStackTrace();
+
+            throw e;
         }
 
         return result;
     }
 
     @Override
-    public boolean delete(int id) {
-        boolean result = false;
+    public boolean delete(int id) throws Exception {
+
+        boolean result;
         final Transaction transaction = getSession().getTransaction();
 
         try {
 
             transaction.begin();
 
-            final String sql = "DELETE FROM users WHERE id=:id;";
+            final String sql = "DELETE from users where id=" + id + ";";
             final Query query = getSession().createSQLQuery(sql);
-
-            query.setParameter("id", id);
 
             result = query.executeUpdate() > 0;
 
             transaction.commit();
 
-        } catch (Exception ext) {
+        } catch (Exception e) {
             transaction.rollback();
 
-            ext.printStackTrace();
+            e.printStackTrace();
+
+            throw e;
         }
 
         return result;

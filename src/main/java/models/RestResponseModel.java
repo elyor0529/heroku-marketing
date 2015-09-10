@@ -7,9 +7,8 @@ import com.google.gson.annotations.SerializedName;
  */
 public class RestResponseModel {
 
-    @SerializedName("object")
-
-    private Object object;
+    @SerializedName("data")
+    private Object data;
 
     @SerializedName("status")
     private String status;
@@ -17,24 +16,21 @@ public class RestResponseModel {
     @SerializedName("code")
     private int code;
 
-    public RestResponseModel(Object object, String status, int code) {
-        this(status, code);
+    @SerializedName("action")
+    private String action;
 
-        this.object = object;
-    }
-
-    public RestResponseModel(String status, int code) {
+    public RestResponseModel(String status, int code, String action) {
         this.status = status;
-
         this.code = code;
+        this.action = action;
     }
 
-    public Object getObject() {
-        return object;
+    public Object getData() {
+        return data;
     }
 
-    public void setObject(Object object) {
-        this.object = object;
+    public void setData(Object data) {
+        this.data = data;
     }
 
     public String getStatus() {
@@ -53,4 +49,11 @@ public class RestResponseModel {
         this.code = code;
     }
 
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
 }

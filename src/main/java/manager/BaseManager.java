@@ -26,42 +26,65 @@ public abstract class BaseManager<T> implements ManagerImpl<T> {
     }
 
     @Override
-    public List<T> getAll(int limit, int offset) {
-        final String sql = "from " + entityName;
-        final Query query = session.createQuery(sql);
+    public List<T> getAll(int limit, int offset) throws Exception {
 
-        if (limit >= 0) {
-            query.setMaxResults(limit);
+        try {
+            final String sql = "from " + entityName;
+            final Query query = session.createQuery(sql);
+
+            if (limit >= 0) {
+                query.setMaxResults(limit);
+            }
+
+            if (offset >= 0) {
+                query.setFirstResult(offset);
+            }
+
+            final List<T> result = query.list();
+
+            return result;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+            throw e;
         }
-
-        if (offset >= 0) {
-            query.setFirstResult(offset);
-        }
-
-        final List<T> result = query.list();
-
-        return result;
     }
 
     @Override
-    public int getSize() {
-        final String sql = "from " + entityName;
-        final Query query = session.createQuery(sql);
-        final List<T> result = query.list();
+    public int getSize() throws Exception {
+        try {
+            final String sql = "from " + entityName;
+            final Query query = session.createQuery(sql);
+            final List<T> result = query.list();
 
-        return result == null ? 0 : result.size();
+            return result == null ? 0 : result.size();
+        } catch (Exception e) {
+            e.printStackTrace();
+
+            throw e;
+        }
     }
 
     @Override
-    public T get(int id) {
-        final String sql = "from " + entityName + " where id=:id";
-        final Query query = session.createQuery(sql);
+    public T get(int id) throws Exception {
 
-        query.setParameter("id", id);
+        try {
+            final String sql = "from " + entityName + " where id=:id";
+            final Query query = session.createQuery(sql);
 
-        final List<T> result = query.list();
+            query.setParameter("id", id);
 
-        return result.size() > 0 ? result.get(0) : null;
+            final List<T> result = query.list();
+
+            return result.size() > 0 ? result.get(0) : null;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+            throw e;
+        }
+
     }
 
 }

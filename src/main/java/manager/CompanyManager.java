@@ -14,8 +14,8 @@ public class CompanyManager extends BaseManager<CompaniesEntity> {
     }
 
     @Override
-    public boolean insert(CompaniesEntity t) {
-        boolean result = false;
+    public int insert(CompaniesEntity t) throws Exception {
+        int result = 0;
         final Transaction transaction = getSession().getTransaction();
 
         try {
@@ -28,7 +28,10 @@ public class CompanyManager extends BaseManager<CompaniesEntity> {
 
             query.setProperties(t);
 
-            result = query.executeUpdate() > 0;
+            if (query.executeUpdate() > 0) {
+                result = (Integer) getSession().createSQLQuery("SELECT max(id) FROM companies;")
+                        .uniqueResult();
+            }
 
             transaction.commit();
 
@@ -37,13 +40,15 @@ public class CompanyManager extends BaseManager<CompaniesEntity> {
             transaction.rollback();
 
             ext.printStackTrace();
+
+            throw ext;
         }
 
         return result;
     }
 
     @Override
-    public boolean update(int id, CompaniesEntity t) {
+    public boolean update(int id, CompaniesEntity t) throws Exception {
         boolean result = false;
         final Transaction transaction = getSession().getTransaction();
 
@@ -54,10 +59,10 @@ public class CompanyManager extends BaseManager<CompaniesEntity> {
             final String sql = "UPDATE companies SET name=:name," +
                     "key=:key," +
                     "currency=:currency," +
-                    "logo_url=:logo_url," +
+                    "logo_url=:logoUrl," +
                     "about=:about," +
-                    "site_url=:site_url," +
-                    "privacy_policy=:privacy_policy ," +
+                    "site_url=:siteUrl," +
+                    "privacy_policy=:privacyPolicy ," +
                     "phone=:phone " +
                     "WHERE id=" + id + ";";
             final Query query = getSession().createSQLQuery(sql);
@@ -73,33 +78,36 @@ public class CompanyManager extends BaseManager<CompaniesEntity> {
             transaction.rollback();
 
             ext.printStackTrace();
+
+            throw ext;
         }
 
         return result;
     }
 
     @Override
-    public boolean delete(int id) {
-        boolean result = false;
+    public boolean delete(int id) throws Exception {
+
+        boolean result;
         final Transaction transaction = getSession().getTransaction();
 
         try {
 
             transaction.begin();
 
-            final String sql = "DELETE FROM companies WHERE id=:id;";
+            final String sql = "DELETE from companies where id=" + id + ";";
             final Query query = getSession().createSQLQuery(sql);
-
-            query.setParameter("id", id);
 
             result = query.executeUpdate() > 0;
 
             transaction.commit();
 
-        } catch (Exception ext) {
+        } catch (Exception e) {
             transaction.rollback();
 
-            ext.printStackTrace();
+            e.printStackTrace();
+
+            throw e;
         }
 
         return result;
