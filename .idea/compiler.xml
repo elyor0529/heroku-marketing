@@ -27,7 +27,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="heroku-marketing" target="1.5" />
+      <module name="heroku-marketing" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
