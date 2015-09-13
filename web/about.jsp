@@ -20,7 +20,7 @@
     <!-- The justified navigation menu is meant for single line per list item.
          Multiple lines will require custom code not provided by Bootstrap. -->
     <jsp:include page="/partials/menu.jsp"/>
-    
+
     <!-- Example row of columns -->
     <div class="page-header">
         <h1>
