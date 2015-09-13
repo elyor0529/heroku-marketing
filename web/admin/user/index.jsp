@@ -81,7 +81,6 @@
                 </td>
                 <td>
                     <jsp:include page="/partials/action.jsp">
-                        <jsp:param name="action" value="user"/>
                         <jsp:param name="id" value="<%=item.getId()%>"/>
                     </jsp:include>
                 </td>
