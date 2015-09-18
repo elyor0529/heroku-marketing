@@ -15,6 +15,15 @@ public class DevicesEntity {
     private String companyKey;
     private String uniqueId;
 
+    public DevicesEntity() {
+        id = 0;
+        brand = "";
+        model = "";
+        token = "";
+        companyKey = "";
+        uniqueId = "";
+    }
+
     @Id
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
     public int getId() {
@@ -73,34 +82,6 @@ public class DevicesEntity {
 
     public void setUniqueId(String uniqueId) {
         this.uniqueId = uniqueId;
-    }
-
-    @PrePersist
-    void prePersist() {
-    }
-
-    @PreUpdate
-    void preUpdate() {
-    }
-
-    @PreRemove
-    void preRemove() {
-    }
-
-    @PostLoad
-    void postLoad() {
-    }
-
-    @PostRemove
-    void postRemove() {
-    }
-
-    @PostUpdate
-    void postUpdate() {
-    }
-
-    @PostPersist
-    void postPersist() {
     }
 
     @Override

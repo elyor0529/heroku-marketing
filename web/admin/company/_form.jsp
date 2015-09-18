@@ -69,78 +69,79 @@
 <form class="form-horizontal" id="form1" method="post" accept-charset="utf-8" novalidate="novalidate">
 
     <div class="form-group ">
-        <label for="cname" class="control-label col-lg-2">Name <span class="required">*</span></label>
+        <label for="c_name" class="control-label col-lg-2">Name <span class="required">*</span></label>
 
         <div class="col-lg-10">
-            <input class="form-control" id="cname" name="name" value="<%=entity.getName()%>" minlength="5"
+            <input class="form-control" id="c_name" name="name" value="<%=entity.getName()%>"
                    type="text"
                    required="required"/>
         </div>
     </div>
 
     <div class="form-group ">
-        <label for="ckey" class="control-label col-lg-2">Key <span class="required">*</span></label>
+        <label for="c_key" class="control-label col-lg-2">Key <span class="required">*</span></label>
 
         <div class="col-lg-10">
-            <input class="form-control" id="ckey" name="key" value="<%=entity.getKey()%>" minlength="5"
+            <input class="form-control" id="c_key" name="key" value="<%=entity.getKey()%>"
                    type="text"
                    required="required"/>
         </div>
     </div>
 
     <div class="form-group ">
-        <label for="ccurrency" class="control-label col-lg-2">Currency <span class="required">*</span></label>
+        <label for="c_currency" class="control-label col-lg-2">Currency <span class="required">*</span></label>
 
         <div class="col-lg-10">
-            <input class="form-control" id="ccurrency" name="currency" value="<%=entity.getCurrency()%>"
-                   minlength="5" type="number"
+            <input class="form-control" id="c_currency" name="currency" value="<%=entity.getCurrency()%>"
+                   type="number"
                    required="required"/>
         </div>
     </div>
 
     <div class="form-group ">
-        <label for="clogo_url" class="control-label col-lg-2">Logo URL <span class="required">*</span></label>
+        <label for="c_logo_url" class="control-label col-lg-2">Logo URL <span class="required">*</span></label>
 
         <div class="col-lg-10">
-            <input class="form-control" id="clogo_url" name="logo_url" value="<%=entity.getLogoUrl()%>"
-                   minlength="5" type="url"
+            <input class="form-control" id="c_logo_url" name="logo_url" value="<%=entity.getLogoUrl()%>"
+                   type="url"
                    required="required"/>
         </div>
     </div>
 
     <div class="form-group ">
-        <label for="cabout" class="control-label col-lg-2">About <span class="required">*</span></label>
+        <label for="c_about" class="control-label col-lg-2">About <span class="required">*</span></label>
 
         <div class="col-lg-10">
-                    <textarea class="form-control" id="cabout" name="about" value="<%=entity.getAbout()%>" minlength="5"
+                    <textarea class="form-control" id="c_about" name="about" value="<%=entity.getAbout()%>"
+
                               required="required"><%=entity.getAbout()%></textarea>
         </div>
     </div>
 
     <div class="form-group ">
-        <label for="csite_url" class="control-label col-lg-2">Site URL <span class="required">*</span></label>
+        <label for="c_site_url" class="control-label col-lg-2">Site URL <span class="required">*</span></label>
 
         <div class="col-lg-10">
-            <input class="form-control" id="csite_url" name="site_url" value="<%=entity.getSiteUrl()%>"
-                   minlength="5" type="url"
+            <input class="form-control" id="c_site_url" name="site_url" value="<%=entity.getSiteUrl()%>"
+                   type="url"
                    required="required"/>
         </div>
     </div>
 
     <div class="form-group ">
-        <label for="cprivacy_policy" class="control-label col-lg-2">Privacy policy</label>
+        <label for="c_privacy_policy" class="control-label col-lg-2">Privacy policy</label>
 
         <div class="col-lg-10">
-                    <textarea class="form-control" id="cprivacy_policy"
+                    <textarea class="form-control" id="c_privacy_policy"
                               name="privacy_policy"><%=entity.getPrivacyPolicy()%></textarea>
         </div>
     </div>
 
     <div class="form-group ">
-        <label for="cphone" class="control-label col-lg-2">Phone <span class="required">*</span></label>
+        <label for="c_phone" class="control-label col-lg-2">Phone <span class="required">*</span></label>
 
         <div class="col-lg-10">
-            <input class="form-control" id="cphone" name="phone" value="<%=entity.getPhone()%>" minlength="5"
+            <input class="form-control" id="c_phone" name="phone" value="<%=entity.getPhone()%>"
                    type="tel"
                    required="required"/>
         </div>

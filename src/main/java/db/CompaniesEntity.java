@@ -18,6 +18,19 @@ public class CompaniesEntity {
     private String privacyPolicy;
     private String phone;
 
+    public CompaniesEntity() {
+        id = 0;
+        name = "";
+        key = "";
+        about = "";
+        currency = 0;
+        logoUrl = "";
+        siteUrl = "";
+        privacyPolicy = "";
+        phone = "";
+    }
+
+
     @Id
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
     public int getId() {
@@ -106,34 +119,6 @@ public class CompaniesEntity {
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    @PrePersist
-    void prePersist() {
-    }
-
-    @PreUpdate
-    void preUpdate() {
-    }
-
-    @PreRemove
-    void preRemove() {
-    }
-
-    @PostLoad
-    void postLoad() {
-    }
-
-    @PostRemove
-    void postRemove() {
-    }
-
-    @PostUpdate
-    void postUpdate() {
-    }
-
-    @PostPersist
-    void postPersist() {
     }
 
     @Override

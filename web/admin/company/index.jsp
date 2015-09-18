@@ -48,7 +48,7 @@
             </a>
         </p>
 
-        <table class="table table-responsible" id="dataTable">
+        <table class="table table-responsible">
 
             <thead>
             <tr>
