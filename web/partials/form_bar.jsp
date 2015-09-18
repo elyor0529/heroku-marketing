@@ -10,14 +10,18 @@
 <%
     final int id = (Integer) new IntegerConverter(0).convert(String.class, request.getParameter("id"));
 %>
-
 <div class="row">
     <p>
-        <a class="btn btn-primary" href="edit.jsp?id=<%=id%>"><i
-                class="glyphicon glyphicon-pencil"></i> Edit</a>
+        <button class="btn btn-primary" type="submit" onclick="$('#form1').submit();"><i
+                class="glyphicon glyphicon-save"></i>Save
+        </button>
+
+        <%if (id > 0) {%>
         <a class="btn btn-danger" href="delete.jsp?id=<%=id%>"
            onclick="return confirm('Are you sure you want to delete this item?');"><i
                 class="glyphicon glyphicon-remove"></i> Delete</a>
+        <%}%>
+
     </p>
 
     <br/>

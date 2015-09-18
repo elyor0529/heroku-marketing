@@ -43,7 +43,7 @@
     <div class="row">
 
         <p>
-            <a href="#" class="btn btn-primary">
+            <a href="create.jsp" class="btn btn-primary">
                 Create
             </a>
         </p>

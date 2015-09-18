@@ -136,3 +136,51 @@ body > .container {
 code {
     font-size: 80%;
 }
+
+/*form*/
+
+.form-horizontal .form-group {
+    border-bottom: 1px solid #eff2f7;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.form-horizontal .form-group:last-child {
+    border-bottom: none;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.form-horizontal .checkbox-inline > input {
+    margin-top: 1px;
+    border: none;
+}
+
+.checkbox, .checkbox:hover, .checkbox:focus {
+    border: none;
+}
+
+/*form validation*/
+#form1 .required {
+    font-size: 16px;
+    color: red !important;
+}
+
+#form1 .form-group label.error, .form-validate .form-group label.error {
+    display: inline;
+    margin: 5px 0;
+    color: red;
+    font-weight: 400;
+}
+
+#form1 input:focus:invalid:focus, textarea:focus:invalid:focus, select:focus:invalid:focus, .form-validate .form-group input.error, .form-validate .form-group textarea.error {
+    border-color: red !important;
+}
+
+#form1 label.error {
+    display: inline;
+    margin: 5px 0px;
+    width: auto;
+    color: red;
+}
+
