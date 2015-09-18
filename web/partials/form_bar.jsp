@@ -12,16 +12,22 @@
 %>
 <div class="row">
     <p>
+
+        <%if (id > 0) {%>
+
+        <button class="btn btn-success" type="submit" onclick="$('#form1').submit();"><i
+                class="glyphicon glyphicon-save"></i>Save
+        </button>
+
+        <a class="btn btn-danger" href="delete.jsp?id=<%=id%>"
+           onclick="return confirm('Are you sure you want to delete this item?');"><i
+                class="glyphicon glyphicon-remove"></i> Delete</a>
+        <%} else {%>
         <button class="btn btn-primary" type="submit" onclick="$('#form1').submit();"><i
                 class="glyphicon glyphicon-save"></i>Save
         </button>
 
-        <%if (id > 0) {%>
-        <a class="btn btn-danger" href="delete.jsp?id=<%=id%>"
-           onclick="return confirm('Are you sure you want to delete this item?');"><i
-                class="glyphicon glyphicon-remove"></i> Delete</a>
         <%}%>
-
     </p>
 
     <br/>

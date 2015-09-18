@@ -11,7 +11,7 @@
     final int id = (Integer) new IntegerConverter(0).convert(String.class, request.getParameter("id"));
 %>
 <p>
-    <a class="btn btn-default" href="view.jsp?id=<%=id%>"><i
+    <a class="btn btn-info" href="view.jsp?id=<%=id%>"><i
             class="glyphicon glyphicon-eye-open"></i> View</a>
     <a class="btn btn-success" href="edit.jsp?id=<%=id%>"><i
             class="glyphicon glyphicon-pencil"></i> Edit</a>

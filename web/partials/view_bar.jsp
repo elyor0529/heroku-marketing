@@ -13,7 +13,7 @@
 
 <div class="row">
     <p>
-        <a class="btn btn-primary" href="edit.jsp?id=<%=id%>"><i
+        <a class="btn btn-success" href="edit.jsp?id=<%=id%>"><i
                 class="glyphicon glyphicon-pencil"></i> Edit</a>
         <a class="btn btn-danger" href="delete.jsp?id=<%=id%>"
            onclick="return confirm('Are you sure you want to delete this item?');"><i
