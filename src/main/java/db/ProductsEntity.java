@@ -15,6 +15,15 @@ public class ProductsEntity {
     private int mark;
     private int companyId;
 
+    public ProductsEntity() {
+        id = 0;
+        photoUrl = "";
+        description = "";
+        name = "";
+        mark = 0;
+        companyId = 0;
+    }
+
     @Id
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
     public int getId() {
@@ -73,34 +82,6 @@ public class ProductsEntity {
 
     public void setCompanyId(int companyId) {
         this.companyId = companyId;
-    }
-
-    @PrePersist
-    void prePersist() {
-    }
-
-    @PreUpdate
-    void preUpdate() {
-    }
-
-    @PreRemove
-    void preRemove() {
-    }
-
-    @PostLoad
-    void postLoad() {
-    }
-
-    @PostRemove
-    void postRemove() {
-    }
-
-    @PostUpdate
-    void postUpdate() {
-    }
-
-    @PostPersist
-    void postPersist() {
     }
 
     @Override

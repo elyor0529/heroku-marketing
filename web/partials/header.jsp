@@ -19,6 +19,8 @@
 <!-- Bootstrap core CSS -->
 <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 <link href="/assets/css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="/assets/componens/select2/select2.css" rel="stylesheet">
+<link href="/assets/componens/select2/select2-bootstrap.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="/assets/css/main.css" rel="stylesheet">

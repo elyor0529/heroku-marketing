@@ -42,12 +42,12 @@
     <div class="row">
 
         <p>
-            <a href="#" class="btn btn-primary">
+            <a href="create.jsp" class="btn btn-primary">
                 Create
             </a>
         </p>
 
-        <table class="table table-responsible" id="dataTable">
+        <table class="table table-responsible">
 
             <thead>
             <tr>

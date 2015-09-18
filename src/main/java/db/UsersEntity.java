@@ -2,6 +2,7 @@ package db;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * Created by elyor on 8/29/2015.
@@ -16,6 +17,16 @@ public class UsersEntity {
     private Timestamp birthday;
     private int promotionalCode;
     private int deviceId;
+
+    public UsersEntity() {
+        id = 0;
+        fullName = "";
+        email = "";
+        gender = "";
+        birthday = new Timestamp(new Date().getTime());
+        promotionalCode = 0;
+        deviceId = 0;
+    }
 
     @Id
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
@@ -85,34 +96,6 @@ public class UsersEntity {
 
     public void setDeviceId(int deviceId) {
         this.deviceId = deviceId;
-    }
-
-    @PrePersist
-    void prePersist() {
-    }
-
-    @PreUpdate
-    void preUpdate() {
-    }
-
-    @PreRemove
-    void preRemove() {
-    }
-
-    @PostLoad
-    void postLoad() {
-    }
-
-    @PostRemove
-    void postRemove() {
-    }
-
-    @PostUpdate
-    void postUpdate() {
-    }
-
-    @PostPersist
-    void postPersist() {
     }
 
     @Override

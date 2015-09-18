@@ -13,7 +13,10 @@
 <script src="/assets/js/jquery.js"></script>
 <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
-
+<script src="/assets/js/jquery.validate.min.js"></script>
+<script src="/assets/componens/select2/select2.min.js"></script>
+<script src="/assets/componens/select2/select2_locale_en.js"></script>
+<script src="/assets/js/main.js"></script>
 
 <!-- Site footer -->
 <footer class="footer">

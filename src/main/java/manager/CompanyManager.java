@@ -4,6 +4,8 @@ import db.CompaniesEntity;
 import org.hibernate.Query;
 import org.hibernate.Transaction;
 
+import java.util.List;
+
 /**
  * Created by elyor on 8/9/2015.
  */
@@ -111,6 +113,26 @@ public class CompanyManager extends BaseManager<CompaniesEntity> {
         }
 
         return result;
+    }
+
+    public CompaniesEntity get(String key) throws Exception {
+
+        try {
+            final String sql = "from CompaniesEntity where key=:key";
+            final Query query = getSession().createQuery(sql);
+
+            query.setParameter("key", key);
+
+            final List<CompaniesEntity> result = query.list();
+
+            return result.size() > 0 ? result.get(0) : null;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+            throw e;
+        }
+
     }
 
 }
