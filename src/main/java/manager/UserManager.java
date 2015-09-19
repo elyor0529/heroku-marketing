@@ -60,7 +60,7 @@ public class UserManager extends BaseManager<UsersEntity> {
                     "full_name=:fullName," +
                     "email=:email," +
                     "gender=:gender," +
-                    "birthday=:birthDay," +
+                    "birthday=:birthday," +
                     "promotional_code=:promotionalCode " +
                     "WHERE id=" + id + ";";
             final Query query = getSession().createSQLQuery(sql);

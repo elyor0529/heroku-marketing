@@ -4,9 +4,9 @@
 <%@ page import="manager.ManagerImpl" %>
 <%@ page import="manager.UserManager" %>
 <%@ page import="org.apache.commons.beanutils.converters.IntegerConverter" %>
-<%@ page import="org.apache.commons.beanutils.converters.SqlDateConverter" %>
 <%@ page import="java.sql.Date" %>
 <%@ page import="java.sql.Timestamp" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 
 <%
     int id = (Integer) new IntegerConverter(0).convert(String.class, request.getParameter("id"));
@@ -26,7 +26,7 @@
             entity.setFullName(request.getParameter("full_name"));
             entity.setEmail(request.getParameter("email"));
             entity.setGender(request.getParameter("gender"));
-            final Date birthDate = (Date) new SqlDateConverter().convert(String.class, request.getParameter("birthday"));
+            final Date birthDate = new Date(new SimpleDateFormat("dd-MM-yyyy").parse(request.getParameter("birthday")).getTime());
             entity.setBirthday(new Timestamp(birthDate.getTime()));
             entity.setPromotionalCode((Integer) new IntegerConverter(0).convert(String.class, request.getParameter("promotional_code")));
             entity.setDeviceId((Integer) new IntegerConverter(0).convert(String.class, request.getParameter("device_id")));
@@ -46,7 +46,7 @@
             entity.setFullName(request.getParameter("full_name"));
             entity.setEmail(request.getParameter("email"));
             entity.setGender(request.getParameter("gender"));
-            final Date birthDate = (Date) new SqlDateConverter().convert(String.class, request.getParameter("birthday"));
+            final Date birthDate = new Date(new SimpleDateFormat("dd-MM-yyyy").parse(request.getParameter("birthday")).getTime());
             entity.setBirthday(new Timestamp(birthDate.getTime()));
             entity.setPromotionalCode((Integer) new IntegerConverter(0).convert(String.class, request.getParameter("promotional_code")));
             entity.setDeviceId((Integer) new IntegerConverter(0).convert(String.class, request.getParameter("device_id")));
@@ -106,9 +106,14 @@
         <label for="c_birthday" class="control-label col-lg-2">Birthday<span class="required">*</span></label>
 
         <div class="col-lg-10">
-            <input class="form-control" id="c_birthday" name="birthday" value="<%=entity.getBirthday()%>"
-                   type="date"
-                   required="required"/>
+
+            <%
+                final String birthDayFormat = new SimpleDateFormat("dd-MM-yyyy").format(new java.util.Date(entity.getBirthday().getTime()));
+            %>
+            <input class="datepicker form-control" id="c_birthday" name="birthday" type="text"
+                   value="<%=birthDayFormat%>"
+                   required="required" data-date-format="mm/dd/yyyy"/>
+
         </div>
     </div>
 

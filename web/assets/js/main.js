@@ -12,11 +12,15 @@ $(document).ready(function () {
      * select2 control
      * */
 
-    $(".select2-control").select2({
-        theme: "classic",
-        language: "en",
-        placeholder: "Please a select",
-        allowClear: true
+    $(".select2-control").select2();
+
+    /*
+     * date picker
+     * */
+    $('.datepicker').datepicker({
+        autoclose: 1,
+        clearBtn: 1,
+        format: "dd-mm-yyyy"
     });
 
 });

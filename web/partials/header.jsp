@@ -21,6 +21,8 @@
 <link href="/assets/css/bootstrap-theme.min.css" rel="stylesheet">
 <link href="/assets/componens/select2/select2.css" rel="stylesheet">
 <link href="/assets/componens/select2/select2-bootstrap.css" rel="stylesheet">
+<link href="/assets/componens/datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+<link href="/assets/componens/datepicker/bootstrap-datepicker3.min.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="/assets/css/main.css" rel="stylesheet">

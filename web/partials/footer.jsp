@@ -15,7 +15,7 @@
 <script src="/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/jquery.validate.min.js"></script>
 <script src="/assets/componens/select2/select2.min.js"></script>
-<script src="/assets/componens/select2/select2_locale_en.js"></script>
+<script src="/assets/componens/datepicker/bootstrap-datepicker.min.js"></script>
 <script src="/assets/js/main.js"></script>
 
 <!-- Site footer -->
