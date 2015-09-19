@@ -88,7 +88,7 @@
         <label for="c_mark" class="control-label col-lg-2">Mark <span class="required">*</span></label>
 
         <div class="col-lg-10">
-            <input class="form-control" id="c_mark" name="photo_url" value="<%=entity.getMark()%>"
+            <input class="form-control" id="c_mark" name="mark" value="<%=entity.getMark()%>"
                    type="number"
                    required="required"/>
         </div>
