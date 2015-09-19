@@ -8,7 +8,7 @@
 <%
     int id = (Integer) new IntegerConverter(0).convert(String.class, request.getParameter("id"));
     final ManagerImpl<DevicesEntity> manager = new DeviceManager();
-    final CompanyManager companyManager = new CompanyManager();
+    final ManagerImpl<CompaniesEntity> companyManager = new CompanyManager();
 
     DevicesEntity entity = null;
 

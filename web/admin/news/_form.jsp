@@ -10,7 +10,7 @@
 <%
     int id = (Integer) new IntegerConverter(0).convert(String.class, request.getParameter("id"));
     final ManagerImpl<NewsEntity> manager = new NewsManager();
-    final CompanyManager companyManager = new CompanyManager();
+    final ManagerImpl<CompaniesEntity> companyManager = new CompanyManager();
 
     NewsEntity entity = null;
 

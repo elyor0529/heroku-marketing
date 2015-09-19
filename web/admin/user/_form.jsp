@@ -1,16 +1,19 @@
-<%@ page import="db.CompaniesEntity" %>
-<%@ page import="db.ProductsEntity" %>
-<%@ page import="manager.CompanyManager" %>
+<%@ page import="db.DevicesEntity" %>
+<%@ page import="db.UsersEntity" %>
+<%@ page import="manager.DeviceManager" %>
 <%@ page import="manager.ManagerImpl" %>
-<%@ page import="manager.ProductManager" %>
+<%@ page import="manager.UserManager" %>
 <%@ page import="org.apache.commons.beanutils.converters.IntegerConverter" %>
+<%@ page import="org.apache.commons.beanutils.converters.SqlDateConverter" %>
+<%@ page import="java.sql.Date" %>
+<%@ page import="java.sql.Timestamp" %>
 
 <%
     int id = (Integer) new IntegerConverter(0).convert(String.class, request.getParameter("id"));
-    final ManagerImpl<ProductsEntity> manager = new ProductManager();
-    final CompanyManager companyManager = new CompanyManager();
+    final ManagerImpl<UsersEntity> manager = new UserManager();
+    final ManagerImpl<DevicesEntity> deviceManager = new DeviceManager();
 
-    ProductsEntity entity = null;
+    UsersEntity entity = null;
 
     if (id > 0) {
 
@@ -20,11 +23,13 @@
         } else if (request.getMethod().equalsIgnoreCase("post")) {
             entity = manager.get(id);
 
-            entity.setName(request.getParameter("name"));
-            entity.setDescription(request.getParameter("description"));
-            entity.setPhotoUrl(request.getParameter("photo_url"));
-            entity.setMark((Integer) new IntegerConverter(0).convert(String.class, request.getParameter("mark")));
-            entity.setCompanyId((Integer) new IntegerConverter(0).convert(String.class, request.getParameter("company_id")));
+            entity.setFullName(request.getParameter("full_name"));
+            entity.setEmail(request.getParameter("email"));
+            entity.setGender(request.getParameter("gender"));
+            final Date birthDate = (Date) new SqlDateConverter().convert(String.class, request.getParameter("birthday"));
+            entity.setBirthday(new Timestamp(birthDate.getTime()));
+            entity.setPromotionalCode((Integer) new IntegerConverter(0).convert(String.class, request.getParameter("promotional_code")));
+            entity.setDeviceId((Integer) new IntegerConverter(0).convert(String.class, request.getParameter("device_id")));
 
             if (manager.update(id, entity)) {
                 pageContext.forward("view.jsp?id=" + id);
@@ -34,15 +39,17 @@
 
         //create
         if (request.getMethod().equalsIgnoreCase("get")) {
-            entity = new ProductsEntity();
+            entity = new UsersEntity();
         } else if (request.getMethod().equalsIgnoreCase("post")) {
-            entity = new ProductsEntity();
+            entity = new UsersEntity();
 
-            entity.setName(request.getParameter("name"));
-            entity.setDescription(request.getParameter("description"));
-            entity.setPhotoUrl(request.getParameter("photo_url"));
-            entity.setMark((Integer) new IntegerConverter(0).convert(String.class, request.getParameter("mark")));
-            entity.setCompanyId((Integer) new IntegerConverter(0).convert(String.class, request.getParameter("company_id")));
+            entity.setFullName(request.getParameter("full_name"));
+            entity.setEmail(request.getParameter("email"));
+            entity.setGender(request.getParameter("gender"));
+            final Date birthDate = (Date) new SqlDateConverter().convert(String.class, request.getParameter("birthday"));
+            entity.setBirthday(new Timestamp(birthDate.getTime()));
+            entity.setPromotionalCode((Integer) new IntegerConverter(0).convert(String.class, request.getParameter("promotional_code")));
+            entity.setDeviceId((Integer) new IntegerConverter(0).convert(String.class, request.getParameter("device_id")));
 
             id = manager.insert(entity);
 
@@ -65,68 +72,83 @@
 <form class="form-horizontal" id="form1" method="post" accept-charset="utf-8" novalidate="novalidate">
 
     <div class="form-group ">
-        <label for="c_name" class="control-label col-lg-2">Name <span class="required">*</span></label>
+        <label for="c_full_name" class="control-label col-lg-2">Full Name <span class="required">*</span></label>
 
         <div class="col-lg-10">
-            <input class="form-control" id="c_name" name="name" value="<%=entity.getName()%>"
+            <input class="form-control" id="c_full_name" name="full_name" value="<%=entity.getFullName()%>"
                    type="text"
                    required="required"/>
         </div>
     </div>
 
     <div class="form-group ">
-        <label for="c_photo_url" class="control-label col-lg-2">Photo Url <span class="required">*</span></label>
+        <label for="c_email" class="control-label col-lg-2">E-mail<span class="required">*</span></label>
 
         <div class="col-lg-10">
-            <input class="form-control" id="c_photo_url" name="photo_url" value="<%=entity.getPhotoUrl()%>"
-                   type="url"
+            <input class="form-control" id="c_email" name="email" value="<%=entity.getEmail()%>"
+                   type="email"
                    required="required"/>
         </div>
     </div>
 
     <div class="form-group ">
-        <label for="c_mark" class="control-label col-lg-2">Mark <span class="required">*</span></label>
+        <label for="c_gender" class="control-label col-lg-2">Gender <span class="required">*</span></label>
 
         <div class="col-lg-10">
-            <input class="form-control" id="c_mark" name="photo_url" value="<%=entity.getMark()%>"
+            <select class="select2-control form-control" name="gender" id="c_gender" required="required">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group ">
+        <label for="c_birthday" class="control-label col-lg-2">Birthday<span class="required">*</span></label>
+
+        <div class="col-lg-10">
+            <input class="form-control" id="c_birthday" name="birthday" value="<%=entity.getBirthday()%>"
+                   type="date"
+                   required="required"/>
+        </div>
+    </div>
+
+    <div class="form-group ">
+        <label for="c_promotional_code" class="control-label col-lg-2">Promotional code<span
+                class="required">*</span></label>
+
+        <div class="col-lg-10">
+            <input class="form-control" id="c_promotional_code" name="promotional_code"
+                   value="<%=entity.getPromotionalCode()%>"
                    type="number"
                    required="required"/>
         </div>
     </div>
 
     <div class="form-group ">
-        <label for="c_company_id" class="control-label col-lg-2">Company Id <span class="required">*</span></label>
+        <label for="c_device_id" class="control-label col-lg-2">Device Id <span class="required">*</span></label>
 
         <div class="col-lg-10">
-            <select class="select2-control form-control" name="company_id" id="c_company_id">
+            <select class="select2-control form-control" name="device_id" id="c_device_id">
                 <%
-                    for (CompaniesEntity company : companyManager.getAll(0, 0)) {
+                    for (DevicesEntity device : deviceManager.getAll(0, 0)) {
 
-                        final boolean isSelected = entity.getCompanyId() > 0 &&
-                                company.getId() == entity.getCompanyId();
+                        final boolean isSelected = entity.getDeviceId() > 0 &&
+                                device.getId() == entity.getDeviceId();
 
                 %>
                 <%if (isSelected) {%>
-                <option value="<%=company.getId()%>" selected="selected"><%=company.getName()%>
+                <option value="<%=device.getId()%>"
+                        selected="selected"><%=device.getBrand() + " - " + device.getModel()%>
                 </option>
                 <%
                 } else {
                 %>
-                <option value="<%=company.getId()%>"><%=company.getName()%>
+                <option value="<%=device.getId()%>"><%=device.getBrand() + " - " + device.getModel()%>
                 </option>
                 <%
                     }%>
                 <%}%>
             </select>
-        </div>
-    </div>
-
-    <div class="form-group ">
-        <label for="c_description" class="control-label col-lg-2">Description <span class="required">*</span></label>
-
-        <div class="col-lg-10">
-            <textarea class="form-control" id="c_description" name="description"
-                      required="required"><%=entity.getDescription()%></textarea>
         </div>
     </div>
 
