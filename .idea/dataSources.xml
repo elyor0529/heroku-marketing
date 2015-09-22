@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3709317521">
+  <component name="DataSourceManagerImpl" format="xml" hash="896518938">
     <data-source source="LOCAL" name="PostgreSQL - marketing@localhost" uuid="4e3fcd99-0699-4496-a97f-1346ce9c20e7">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
@@ -17,6 +17,17 @@
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://ec2-54-83-58-191.compute-1.amazonaws.com:5432/dd3e8jafl17maj?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory</jdbc-url>
+      <libraries>
+        <library>
+          <url>file://C:/tmp/libs/postgresql/postgresql-9.4-1201.jdbc4.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="PostgreSQL - iloyalty_marketing@mocha6007.mochahost.com" uuid="9511836a-563f-42ea-95bf-f2a499507dc6">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://mocha6007.mochahost.com:5432/iloyalty_marketing</jdbc-url>
       <libraries>
         <library>
           <url>file://C:/tmp/libs/postgresql/postgresql-9.4-1201.jdbc4.jar</url>

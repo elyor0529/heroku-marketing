@@ -137,9 +137,9 @@
       <column name="key" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
       <column name="currency" sqlType="float4" precision="8" scale="8" nullable="false" jdbcType="7"/>
       <column name="logo_url" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
-      <column name="about" sqlType="text" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="about" sqlType="varchar" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="site_url" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
-      <column name="privacy_policy" sqlType="text" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="privacy_policy" sqlType="varchar" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="phone" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="companies_pkey" columns="id"/>
       <exported-key name="news_company_id_fkey" table="news" schema="public" catalog="dd3e8jafl17maj" columns="company_id"/>
@@ -186,7 +186,7 @@
       <column name="photo_url" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
       <column name="modified_date" sqlType="timestamptz" precision="35" scale="6" nullable="false" jdbcType="93"/>
       <column name="created_date" sqlType="timestamptz" precision="35" scale="6" nullable="false" jdbcType="93"/>
-      <column name="content" sqlType="text" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="content" sqlType="varchar" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="title" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
       <column name="company_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="news_pkey" columns="id"/>
@@ -207,7 +207,7 @@
     <table name="products" schema="public" catalog="dd3e8jafl17maj" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncHJvZHVjdHNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
       <column name="photo_url" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
-      <column name="description" sqlType="text" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="varchar" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="name" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="mark" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="company_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
@@ -249,5 +249,8 @@
       <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
       <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
+  </data-source>
+  <data-source name="PostgreSQL - iloyalty_marketing@mocha6007.mochahost.com" uuid="9511836a-563f-42ea-95bf-f2a499507dc6">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
 </component>
