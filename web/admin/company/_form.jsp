@@ -152,6 +152,6 @@
 <br/>
 <br/>
 
-<jsp:include page="./partials/form_bar.jsp">
+<jsp:include page="/partials/form_bar.jsp">
     <jsp:param name="id" value="<%=id%>"/>
 </jsp:include>

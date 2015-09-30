@@ -5,252 +5,315 @@
       <identifier-quote-string>&quot;</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
-    <schema name="public" catalog="marketing"/>
-    <table name="companies" schema="public" catalog="marketing" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnY29tcGFuaWVzX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="name" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
-      <column name="key" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="currency" sqlType="float4" precision="8" scale="8" nullable="false" jdbcType="7"/>
-      <column name="logo_url" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
-      <column name="about" sqlType="varchar" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="site_url" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
-      <column name="privacy_policy" sqlType="varchar" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="phone" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <primary-key name="companies_pkey" columns="id"/>
-      <exported-key name="news_company_id_fkey" table="news" schema="public" catalog="marketing" columns="company_id"/>
-      <exported-key name="products_company_id_fkey" table="products" schema="public" catalog="marketing" columns="company_id"/>
-      <index name="unique_key" unique="true" columns="key"/>
-    </table>
-    <table name="companies_id_seq" schema="public" catalog="marketing" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="devices" schema="public" catalog="marketing" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZGV2aWNlc19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="brand" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <column name="model" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <column name="token" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
-      <column name="company_key" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <column name="unique_id" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="devices_pkey" columns="id"/>
-      <exported-key name="users_device_id_fkey" table="users" schema="public" catalog="marketing" columns="device_id"/>
-      <index name="unique_unique_id" unique="true" columns="unique_id"/>
-    </table>
-    <table name="devices_id_seq" schema="public" catalog="marketing" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="news" schema="public" catalog="marketing" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnbmV3c19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="photo_url" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
-      <column name="modified_date" sqlType="timestamptz" precision="35" scale="6" nullable="false" jdbcType="93"/>
-      <column name="created_date" sqlType="timestamptz" precision="35" scale="6" nullable="false" jdbcType="93"/>
-      <column name="content" sqlType="varchar" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="title" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
-      <column name="company_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <primary-key name="news_pkey" columns="id"/>
-      <foreign-key name="news_company_id_fkey" columns="company_id" ref-table="companies" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-    </table>
-    <table name="news_id_seq" schema="public" catalog="marketing" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="products" schema="public" catalog="marketing" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncHJvZHVjdHNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="photo_url" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
-      <column name="description" sqlType="varchar" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="name" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <column name="mark" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="company_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <primary-key name="products_pkey" columns="id"/>
-      <foreign-key name="products_company_id_fkey" columns="company_id" ref-table="companies" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-    </table>
-    <table name="products_id_seq" schema="public" catalog="marketing" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="users" schema="public" catalog="marketing" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndXNlcnNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="full_name" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
-      <column name="email" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <column name="gender" sqlType="varchar" precision="25" scale="0" nullable="false" jdbcType="12"/>
-      <column name="birthday" sqlType="timestamptz" precision="35" scale="6" nullable="false" jdbcType="93"/>
-      <column name="promotional_code" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="device_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <primary-key name="users_pkey" columns="id"/>
-      <foreign-key name="users_device_id_fkey" columns="device_id" ref-table="devices" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-    </table>
-    <table name="users_id_seq" schema="public" catalog="marketing" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-  </data-source>
-  <data-source name="PostgreSQL - dd3e8jafl17maj?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory@ec2-54-83-58-191.compute-1.amazonaws.com" uuid="40061cf0-f6b9-4089-9367-4372e59541ad">
-    <database-info product="PostgreSQL" version="9.4.4" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
-      <identifier-quote-string>&quot;</identifier-quote-string>
-    </database-info>
-    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
-    <schema name="public" catalog="dd3e8jafl17maj"/>
-    <table name="companies" schema="public" catalog="dd3e8jafl17maj" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnY29tcGFuaWVzX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="name" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
-      <column name="key" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="currency" sqlType="float4" precision="8" scale="8" nullable="false" jdbcType="7"/>
-      <column name="logo_url" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
-      <column name="about" sqlType="varchar" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="site_url" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
-      <column name="privacy_policy" sqlType="varchar" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="phone" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <primary-key name="companies_pkey" columns="id"/>
-      <exported-key name="news_company_id_fkey" table="news" schema="public" catalog="dd3e8jafl17maj" columns="company_id"/>
-      <exported-key name="products_company_id_fkey" table="products" schema="public" catalog="dd3e8jafl17maj" columns="company_id"/>
-      <index name="unique_key" unique="true" columns="key"/>
-    </table>
-    <table name="companies_id_seq" schema="public" catalog="dd3e8jafl17maj" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="devices" schema="public" catalog="dd3e8jafl17maj" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZGV2aWNlc19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="brand" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <column name="model" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <column name="token" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
-      <column name="company_key" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <column name="unique_id" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="devices_pkey" columns="id"/>
-      <exported-key name="users_device_id_fkey" table="users" schema="public" catalog="dd3e8jafl17maj" columns="device_id"/>
-      <index name="unique_unique_id" unique="true" columns="unique_id"/>
-    </table>
-    <table name="devices_id_seq" schema="public" catalog="dd3e8jafl17maj" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="news" schema="public" catalog="dd3e8jafl17maj" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnbmV3c19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="photo_url" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
-      <column name="modified_date" sqlType="timestamptz" precision="35" scale="6" nullable="false" jdbcType="93"/>
-      <column name="created_date" sqlType="timestamptz" precision="35" scale="6" nullable="false" jdbcType="93"/>
-      <column name="content" sqlType="varchar" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="title" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
-      <column name="company_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <primary-key name="news_pkey" columns="id"/>
-      <foreign-key name="news_company_id_fkey" columns="company_id" ref-table="companies" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-    </table>
-    <table name="news_id_seq" schema="public" catalog="dd3e8jafl17maj" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="products" schema="public" catalog="dd3e8jafl17maj" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncHJvZHVjdHNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="photo_url" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
-      <column name="description" sqlType="varchar" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="name" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <column name="mark" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="company_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <primary-key name="products_pkey" columns="id"/>
-      <foreign-key name="products_company_id_fkey" columns="company_id" ref-table="companies" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-    </table>
-    <table name="products_id_seq" schema="public" catalog="dd3e8jafl17maj" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="users" schema="public" catalog="dd3e8jafl17maj" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndXNlcnNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="full_name" sqlType="varchar" precision="250" scale="0" nullable="false" jdbcType="12"/>
-      <column name="email" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <column name="gender" sqlType="varchar" precision="25" scale="0" nullable="false" jdbcType="12"/>
-      <column name="birthday" sqlType="timestamptz" precision="35" scale="6" nullable="false" jdbcType="93"/>
-      <column name="promotional_code" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="device_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <primary-key name="users_pkey" columns="id"/>
-      <foreign-key name="users_device_id_fkey" columns="device_id" ref-table="devices" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-    </table>
-    <table name="users_id_seq" schema="public" catalog="dd3e8jafl17maj" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-  </data-source>
-  <data-source name="PostgreSQL - iloyalty_marketing@mocha6007.mochahost.com" uuid="9511836a-563f-42ea-95bf-f2a499507dc6">
-    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+    <database-model serializer="dbm" rdbms="POSTGRE" format-version="2.1">
+      <database id="1" name="marketing"/>
+      <schema id="2" parent="1" name="public">
+        <object-id>2200</object-id>
+        <comment>standard public schema</comment>
+        <introspection-state-number>1321</introspection-state-number>
+        <introspection-timestamp>2015-10-05.00:45:40.008</introspection-timestamp>
+      </schema>
+      <sequence id="3" parent="2" name="companies_id_seq">
+        <object-id>16761</object-id>
+        <state-number>1315</state-number>
+        <increment-by>1</increment-by>
+      </sequence>
+      <sequence id="4" parent="2" name="devices_id_seq">
+        <object-id>16773</object-id>
+        <state-number>1317</state-number>
+        <increment-by>1</increment-by>
+      </sequence>
+      <sequence id="5" parent="2" name="news_id_seq">
+        <object-id>16782</object-id>
+        <state-number>1319</state-number>
+        <increment-by>1</increment-by>
+      </sequence>
+      <sequence id="6" parent="2" name="products_id_seq">
+        <object-id>16798</object-id>
+        <state-number>1320</state-number>
+        <increment-by>1</increment-by>
+      </sequence>
+      <sequence id="7" parent="2" name="users_id_seq">
+        <object-id>16814</object-id>
+        <state-number>1321</state-number>
+        <increment-by>1</increment-by>
+      </sequence>
+      <table id="8" parent="2" name="companies">
+        <object-id>16763</object-id>
+        <state-number>1320</state-number>
+      </table>
+      <table id="9" parent="2" name="devices">
+        <object-id>16775</object-id>
+        <state-number>1321</state-number>
+      </table>
+      <table id="10" parent="2" name="news">
+        <object-id>16784</object-id>
+        <state-number>1319</state-number>
+      </table>
+      <table id="11" parent="2" name="products">
+        <object-id>16800</object-id>
+        <state-number>1320</state-number>
+      </table>
+      <table id="12" parent="2" name="users">
+        <object-id>16816</object-id>
+        <state-number>1321</state-number>
+      </table>
+      <column id="13" parent="8" name="id">
+        <state-number>1315</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;companies_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="14" parent="8" name="name">
+        <state-number>1315</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)</data-type>
+      </column>
+      <column id="15" parent="8" name="key">
+        <state-number>1315</state-number>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="16" parent="8" name="currency">
+        <state-number>1315</state-number>
+        <mandatory>1</mandatory>
+        <data-type>real</data-type>
+      </column>
+      <column id="17" parent="8" name="logo_url">
+        <state-number>1315</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)</data-type>
+      </column>
+      <column id="18" parent="8" name="about">
+        <state-number>1315</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="19" parent="8" name="site_url">
+        <state-number>1315</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)</data-type>
+      </column>
+      <column id="20" parent="8" name="privacy_policy">
+        <state-number>1315</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="21" parent="8" name="phone">
+        <state-number>1315</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <index id="22" parent="8" name="companies_pkey">
+        <object-id>16770</object-id>
+        <columns>id</columns>
+        <unique>1</unique>
+      </index>
+      <index id="23" parent="8" name="unique_key">
+        <object-id>16772</object-id>
+        <columns>key</columns>
+        <unique>1</unique>
+      </index>
+      <key id="24" parent="8" name="companies_pkey">
+        <columns>id</columns>
+        <underlying-index>companies_pkey|id</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="25" parent="9" name="id">
+        <state-number>1317</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;devices_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="26" parent="9" name="brand">
+        <state-number>1317</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="27" parent="9" name="model">
+        <state-number>1317</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="28" parent="9" name="token">
+        <state-number>1317</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)</data-type>
+      </column>
+      <column id="29" parent="9" name="company_key">
+        <state-number>1317</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="30" parent="9" name="unique_id">
+        <state-number>1317</state-number>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <index id="31" parent="9" name="devices_pkey">
+        <object-id>16779</object-id>
+        <columns>id</columns>
+        <unique>1</unique>
+      </index>
+      <index id="32" parent="9" name="unique_unique_id">
+        <object-id>16781</object-id>
+        <columns>unique_id</columns>
+        <unique>1</unique>
+      </index>
+      <key id="33" parent="9" name="devices_pkey">
+        <columns>id</columns>
+        <underlying-index>devices_pkey|id</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="34" parent="10" name="id">
+        <state-number>1319</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;news_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="35" parent="10" name="photo_url">
+        <state-number>1319</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)</data-type>
+      </column>
+      <column id="36" parent="10" name="modified_date">
+        <state-number>1319</state-number>
+        <mandatory>1</mandatory>
+        <data-type>timestamp with time zone</data-type>
+      </column>
+      <column id="37" parent="10" name="created_date">
+        <state-number>1319</state-number>
+        <mandatory>1</mandatory>
+        <data-type>timestamp with time zone</data-type>
+      </column>
+      <column id="38" parent="10" name="content">
+        <state-number>1319</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="39" parent="10" name="title">
+        <state-number>1319</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)</data-type>
+      </column>
+      <column id="40" parent="10" name="company_id">
+        <state-number>1319</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <index id="41" parent="10" name="news_pkey">
+        <object-id>16791</object-id>
+        <columns>id</columns>
+        <unique>1</unique>
+      </index>
+      <key id="42" parent="10" name="news_pkey">
+        <columns>id</columns>
+        <underlying-index>news_pkey|id</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="43" parent="10" name="news_company_id_fkey">
+        <columns>company_id</columns>
+        <ref-key>companies.companies_pkey|id</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="44" parent="11" name="id">
+        <state-number>1320</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;products_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="45" parent="11" name="photo_url">
+        <state-number>1320</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)</data-type>
+      </column>
+      <column id="46" parent="11" name="description">
+        <state-number>1320</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="47" parent="11" name="name">
+        <state-number>1320</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="48" parent="11" name="mark">
+        <state-number>1320</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="49" parent="11" name="company_id">
+        <state-number>1320</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <index id="50" parent="11" name="products_pkey">
+        <object-id>16807</object-id>
+        <columns>id</columns>
+        <unique>1</unique>
+      </index>
+      <key id="51" parent="11" name="products_pkey">
+        <columns>id</columns>
+        <underlying-index>products_pkey|id</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="52" parent="11" name="products_company_id_fkey">
+        <columns>company_id</columns>
+        <ref-key>companies.companies_pkey|id</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="53" parent="12" name="id">
+        <state-number>1321</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;users_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="54" parent="12" name="full_name">
+        <state-number>1321</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)</data-type>
+      </column>
+      <column id="55" parent="12" name="email">
+        <state-number>1321</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="56" parent="12" name="gender">
+        <state-number>1321</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(25)</data-type>
+      </column>
+      <column id="57" parent="12" name="birthday">
+        <state-number>1321</state-number>
+        <mandatory>1</mandatory>
+        <data-type>timestamp with time zone</data-type>
+      </column>
+      <column id="58" parent="12" name="promotional_code">
+        <state-number>1321</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="59" parent="12" name="device_id">
+        <state-number>1321</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <index id="60" parent="12" name="users_pkey">
+        <object-id>16820</object-id>
+        <columns>id</columns>
+        <unique>1</unique>
+      </index>
+      <key id="61" parent="12" name="users_pkey">
+        <columns>id</columns>
+        <underlying-index>users_pkey|id</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="62" parent="12" name="users_device_id_fkey">
+        <columns>device_id</columns>
+        <ref-key>devices.devices_pkey|id</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+    </database-model>
   </data-source>
 </component>
