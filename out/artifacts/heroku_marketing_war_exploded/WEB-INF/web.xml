@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <!--
+          user
+          -->
+    <servlet>
+        <servlet-name>user</servlet-name>
+        <servlet-class>servlets.rest.db.UserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>user</servlet-name>
+        <url-pattern>/rest/user</url-pattern>
+    </servlet-mapping>
+
+    <!--
+        company
+        -->
+    <servlet>
+        <servlet-name>company</servlet-name>
+        <servlet-class>servlets.rest.db.CompanyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>company</servlet-name>
+        <url-pattern>/rest/company</url-pattern>
+    </servlet-mapping>
+
+    <!--
+        product
+        -->
+    <servlet>
+        <servlet-name>product</servlet-name>
+        <servlet-class>servlets.rest.db.ProductServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>product</servlet-name>
+        <url-pattern>/rest/product</url-pattern>
+    </servlet-mapping>
+
+    <!--
+        news
+        -->
+    <servlet>
+        <servlet-name>news</servlet-name>
+        <servlet-class>servlets.rest.db.NewsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>news</servlet-name>
+        <url-pattern>/rest/news</url-pattern>
+    </servlet-mapping>
+
+    <!--
+        device
+        -->
+    <servlet>
+        <servlet-name>device</servlet-name>
+        <servlet-class>servlets.rest.db.DeviceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>device</servlet-name>
+        <url-pattern>/rest/device</url-pattern>
+    </servlet-mapping>
+
+    <!--
+    contents
+    -->
+
+    <icon>
+        <small-icon>/assets/images/favicon.ico</small-icon>
+    </icon>
+    <welcome-file-list>
+        <welcome-file>/index.jsp</welcome-file>
+    </welcome-file-list>
+    <error-page>
+        <location>/error.jsp</location>
+    </error-page>
+
+
+</web-app>
