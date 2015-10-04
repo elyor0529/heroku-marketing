@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="db.UsersEntity" table="users" schema="public">
+        <id name="id">
+            <column name="id" sql-type="serial" not-null="true"/>
+        </id>
+        <property name="fullName">
+            <column name="full_name" sql-type="varchar" length="250" not-null="true"/>
+        </property>
+        <property name="email">
+            <column name="email" sql-type="varchar" length="50" not-null="true"/>
+        </property>
+        <property name="gender">
+            <column name="gender" sql-type="varchar" length="25" not-null="true"/>
+        </property>
+        <property name="birthday">
+            <column name="birthday" sql-type="timestamptz" not-null="true"/>
+        </property>
+        <property name="promotionalCode">
+            <column name="promotional_code" sql-type="int4" not-null="true"/>
+        </property>
+        <property name="deviceId">
+            <column name="device_id" sql-type="int4" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
