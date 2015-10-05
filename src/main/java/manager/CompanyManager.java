@@ -30,12 +30,12 @@ public class CompanyManager extends BaseManager<CompaniesEntity> {
 
             query.setProperties(t);
 
-            if (query.executeUpdate() > 0) {
-                result = (Integer) getSession().createSQLQuery("SELECT max(id) FROM companies;")
-                        .uniqueResult();
-            }
+            query.executeUpdate();
 
             transaction.commit();
+
+            result = (Integer) getSession().createSQLQuery("SELECT max(id) FROM companies;")
+                    .uniqueResult();
 
         } catch (Exception ext) {
 
@@ -71,9 +71,11 @@ public class CompanyManager extends BaseManager<CompaniesEntity> {
 
             query.setProperties(t);
 
-            result = query.executeUpdate() > 0;
+            query.executeUpdate();
 
             transaction.commit();
+
+            result = true;
 
         } catch (Exception ext) {
 
@@ -90,7 +92,7 @@ public class CompanyManager extends BaseManager<CompaniesEntity> {
     @Override
     public boolean delete(int id) throws Exception {
 
-        boolean result;
+        boolean result = false;
         final Transaction transaction = getSession().getTransaction();
 
         try {
@@ -100,9 +102,11 @@ public class CompanyManager extends BaseManager<CompaniesEntity> {
             final String sql = "DELETE from companies where id=" + id + ";";
             final Query query = getSession().createSQLQuery(sql);
 
-            result = query.executeUpdate() > 0;
+            query.executeUpdate();
 
             transaction.commit();
+
+            result = true;
 
         } catch (Exception e) {
             transaction.rollback();

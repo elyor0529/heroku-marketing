@@ -23,7 +23,7 @@ public class Main {
     }
 
     private static void RunHibernate() {
-        final Session session = FactoryHelper.getSession();
+        final Session session = FactoryHelper.getSessionFactory().openSession();
         final Map metadataMap = session.getSessionFactory().getAllClassMetadata();
         for (Object key : metadataMap.keySet()) {
 

@@ -4,7 +4,6 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.hibernate.HibernateException;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
@@ -44,10 +43,6 @@ public class FactoryHelper {
             }
         }
         return sessionFactory;
-    }
-
-    public static Session getSession() throws HibernateException {
-        return getSessionFactory().openSession();
     }
 
     public static ResourceBundle getResourceBundle() {

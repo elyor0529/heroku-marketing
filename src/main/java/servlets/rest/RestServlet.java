@@ -115,7 +115,7 @@ public abstract class RestServlet<T> extends BaseServlet {
 
         } catch (Exception e) {
 
-            model = new RestResponseModel("ERROR", 404, "GET");
+            model = new RestResponseModel("ERROR", 404, "POST");
             model.setData(e);
 
         }
@@ -136,15 +136,15 @@ public abstract class RestServlet<T> extends BaseServlet {
 
             if (manager.update(id, entity)) {
                 entity = manager.get(id);
-                model = new RestResponseModel("OK", 200, "POST");
+                model = new RestResponseModel("OK", 200, "PUT");
                 model.setData(entity);
             } else {
-                model = new RestResponseModel("FAILURE", 503, "POST");
+                model = new RestResponseModel("FAILURE", 503, "PUT");
             }
 
         } catch (Exception e) {
 
-            model = new RestResponseModel("ERROR", 404, "GET");
+            model = new RestResponseModel("ERROR", 404, "PUT");
             model.setData(e);
 
         }
@@ -170,7 +170,7 @@ public abstract class RestServlet<T> extends BaseServlet {
 
         } catch (Exception e) {
 
-            model = new RestResponseModel("ERROR", 404, "GET");
+            model = new RestResponseModel("ERROR", 404, "DELETE");
             model.setData(e);
 
         }

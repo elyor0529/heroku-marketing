@@ -13,8 +13,10 @@ public abstract class BaseServlet extends HttpServlet {
 
     protected void printJson(HttpServletResponse response, String json) throws IOException {
 
+        response.setCharacterEncoding("utf-8");
         response.setContentType(Settings.REST_TYPE);
         response.getWriter().write(json);
 
     }
+
 }

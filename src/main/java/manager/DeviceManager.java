@@ -28,12 +28,12 @@ public class DeviceManager extends BaseManager<DevicesEntity> {
 
             query.setProperties(t);
 
-            if (query.executeUpdate() > 0) {
-                result = (Integer) getSession().createSQLQuery("SELECT max(id) FROM devices;")
-                        .uniqueResult();
-            }
+            query.executeUpdate();
 
             transaction.commit();
+
+            result = (Integer) getSession().createSQLQuery("SELECT max(id) FROM devices;")
+                    .uniqueResult();
 
         } catch (Exception e) {
 
@@ -66,9 +66,11 @@ public class DeviceManager extends BaseManager<DevicesEntity> {
 
             query.setProperties(t);
 
-            result = query.executeUpdate() > 0;
+            query.executeUpdate();
 
             transaction.commit();
+
+            result = true;
 
         } catch (Exception e) {
 
@@ -85,7 +87,7 @@ public class DeviceManager extends BaseManager<DevicesEntity> {
     @Override
     public boolean delete(int id) throws Exception {
 
-        boolean result;
+        boolean result = false;
         final Transaction transaction = getSession().getTransaction();
 
         try {
@@ -95,9 +97,11 @@ public class DeviceManager extends BaseManager<DevicesEntity> {
             final String sql = "DELETE from devices where id=" + id + ";";
             final Query query = getSession().createSQLQuery(sql);
 
-            result = query.executeUpdate() > 0;
+            query.executeUpdate();
 
             transaction.commit();
+
+            result = true;
 
         } catch (Exception e) {
             transaction.rollback();

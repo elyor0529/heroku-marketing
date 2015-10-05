@@ -28,12 +28,12 @@ public class NewsManager extends BaseManager<NewsEntity> {
 
             query.setProperties(t);
 
-            if (query.executeUpdate() > 0) {
-                result = (Integer) getSession().createSQLQuery("SELECT max(id) FROM news;")
-                        .uniqueResult();
-            }
+            query.executeUpdate();
 
             transaction.commit();
+
+            result = (Integer) getSession().createSQLQuery("SELECT max(id) FROM news;")
+                    .uniqueResult();
 
         } catch (Exception e) {
 
@@ -67,9 +67,11 @@ public class NewsManager extends BaseManager<NewsEntity> {
 
             query.setProperties(t);
 
-            result = query.executeUpdate() > 0;
+            query.executeUpdate();
 
             transaction.commit();
+
+            result = true;
 
         } catch (Exception e) {
 
@@ -86,7 +88,7 @@ public class NewsManager extends BaseManager<NewsEntity> {
     @Override
     public boolean delete(int id) throws Exception {
 
-        boolean result;
+        boolean result = false;
         final Transaction transaction = getSession().getTransaction();
 
         try {
@@ -96,9 +98,11 @@ public class NewsManager extends BaseManager<NewsEntity> {
             final String sql = "DELETE from news where id=" + id + ";";
             final Query query = getSession().createSQLQuery(sql);
 
-            result = query.executeUpdate() > 0;
+            query.executeUpdate();
 
             transaction.commit();
+
+            result = true;
 
         } catch (Exception e) {
             transaction.rollback();

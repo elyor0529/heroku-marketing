@@ -11,18 +11,16 @@ import java.util.List;
  */
 public abstract class BaseManager<T> implements ManagerImpl<T> {
 
-    private final Session session;
     private final String entityName;
     private final T t;
 
     public BaseManager(T t) {
         this.t = t;
         entityName = t.getClass().getName();
-        session = FactoryHelper.getSession();
     }
 
     protected final Session getSession() {
-        return session;
+        return FactoryHelper.getSessionFactory().openSession();
     }
 
     @Override
@@ -30,7 +28,7 @@ public abstract class BaseManager<T> implements ManagerImpl<T> {
 
         try {
             final String sql = "from " + entityName;
-            final Query query = session.createQuery(sql);
+            final Query query = getSession().createQuery(sql);
 
             if (limit >= 0) {
                 query.setMaxResults(limit);
@@ -55,7 +53,7 @@ public abstract class BaseManager<T> implements ManagerImpl<T> {
     public int getSize() throws Exception {
         try {
             final String sql = "from " + entityName;
-            final Query query = session.createQuery(sql);
+            final Query query = getSession().createQuery(sql);
             final List<T> result = query.list();
 
             return result == null ? 0 : result.size();
@@ -71,7 +69,7 @@ public abstract class BaseManager<T> implements ManagerImpl<T> {
 
         try {
             final String sql = "from " + entityName + " where id=:id";
-            final Query query = session.createQuery(sql);
+            final Query query = getSession().createQuery(sql);
 
             query.setParameter("id", id);
 

@@ -28,12 +28,12 @@ public class UserManager extends BaseManager<UsersEntity> {
 
             query.setProperties(t);
 
-            if (query.executeUpdate() > 0) {
-                result = (Integer) getSession().createSQLQuery("SELECT max(id) FROM users;")
-                        .uniqueResult();
-            }
+            query.executeUpdate();
 
             transaction.commit();
+
+            result = (Integer) getSession().createSQLQuery("SELECT max(id) FROM users;")
+                    .uniqueResult();
 
         } catch (Exception e) {
 
@@ -67,10 +67,11 @@ public class UserManager extends BaseManager<UsersEntity> {
 
             query.setProperties(t);
 
-            result = query.executeUpdate() > 0;
+            query.executeUpdate();
 
             transaction.commit();
 
+            result = true;
         } catch (Exception e) {
 
             transaction.rollback();
@@ -86,7 +87,7 @@ public class UserManager extends BaseManager<UsersEntity> {
     @Override
     public boolean delete(int id) throws Exception {
 
-        boolean result;
+        boolean result = false;
         final Transaction transaction = getSession().getTransaction();
 
         try {
@@ -96,10 +97,11 @@ public class UserManager extends BaseManager<UsersEntity> {
             final String sql = "DELETE from users where id=" + id + ";";
             final Query query = getSession().createSQLQuery(sql);
 
-            result = query.executeUpdate() > 0;
+            query.executeUpdate();
 
             transaction.commit();
 
+            result = true;
         } catch (Exception e) {
             transaction.rollback();
 

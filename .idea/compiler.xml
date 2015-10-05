@@ -25,9 +25,17 @@
         <module name="heroku-marketing" />
         <module name="hiroku-marketing" />
       </profile>
+      <profile default="false" name="Annotation profile for i-marketing" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="i-marketing" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="heroku-marketing" target="1.5" />
+      <module name="i-marketing" target="1.6" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
