@@ -1,3 +1,5 @@
 # i-marketing
-Hiroku Marketing
+i-Marketing
 
+
+http://jdk8-machine1.cloudapp.net:8080/
