@@ -3,7 +3,6 @@ package helpers;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
@@ -27,7 +26,7 @@ public class FactoryHelper {
     //json
     private static Gson gson;
 
-    public static SessionFactory getSessionFactory() throws HibernateException {
+    public static SessionFactory getSessionFactory() throws Exception {
         if (sessionFactory == null) {
             try {
                 Configuration configuration = new Configuration();
@@ -37,11 +36,13 @@ public class FactoryHelper {
                 ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
                 sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 
-            } catch (Throwable e) {
+            } catch (Exception e) {
                 e.printStackTrace();
-                throw new ExceptionInInitializerError(e);
+
+                throw e;
             }
         }
+
         return sessionFactory;
     }
 

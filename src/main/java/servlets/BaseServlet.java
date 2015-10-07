@@ -1,5 +1,6 @@
 package servlets;
 
+import helpers.FactoryHelper;
 import utils.Settings;
 
 import javax.servlet.http.HttpServlet;
@@ -11,7 +12,9 @@ import java.io.IOException;
  */
 public abstract class BaseServlet extends HttpServlet {
 
-    protected void printJson(HttpServletResponse response, String json) throws IOException {
+    protected void printJson(HttpServletResponse response, Object obj) throws IOException {
+
+        final String json = FactoryHelper.getGson().toJson(obj);
 
         response.setCharacterEncoding("utf-8");
         response.setContentType(Settings.REST_TYPE);

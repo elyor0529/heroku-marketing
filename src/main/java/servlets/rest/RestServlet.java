@@ -91,9 +91,7 @@ public abstract class RestServlet<T> extends BaseServlet {
 
         }
 
-        final String json = FactoryHelper.getGson().toJson(model);
-
-        printJson(response, json);
+        printJson(response, model);
 
     }
 
@@ -120,9 +118,7 @@ public abstract class RestServlet<T> extends BaseServlet {
 
         }
 
-        final String json = FactoryHelper.getGson().toJson(model);
-
-        printJson(response, json);
+        printJson(response, model);
 
     }
 
@@ -149,9 +145,7 @@ public abstract class RestServlet<T> extends BaseServlet {
 
         }
 
-        final String json = FactoryHelper.getGson().toJson(model);
-
-        printJson(response, json);
+        printJson(response, model);
 
     }
 
@@ -175,9 +169,7 @@ public abstract class RestServlet<T> extends BaseServlet {
 
         }
 
-        final String json = FactoryHelper.getGson().toJson(model);
-
-        printJson(response, json);
+        printJson(response, model);
     }
 
 }

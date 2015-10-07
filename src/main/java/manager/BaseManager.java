@@ -19,7 +19,7 @@ public abstract class BaseManager<T> implements ManagerImpl<T> {
         entityName = t.getClass().getName();
     }
 
-    protected final Session getSession() {
+    protected final Session getSession() throws Exception {
         return FactoryHelper.getSessionFactory().openSession();
     }
 

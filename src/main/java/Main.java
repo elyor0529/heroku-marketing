@@ -22,7 +22,7 @@ public class Main {
 
     }
 
-    private static void RunHibernate() {
+    private static void RunHibernate() throws Exception {
         final Session session = FactoryHelper.getSessionFactory().openSession();
         final Map metadataMap = session.getSessionFactory().getAllClassMetadata();
         for (Object key : metadataMap.keySet()) {
