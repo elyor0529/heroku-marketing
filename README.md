@@ -2,4 +2,4 @@
 i-Marketing
 
 
-http://jdk8-machine1.cloudapp.net:8080/
+http://heroku-postgres-455e2c88.herokuapp.com
