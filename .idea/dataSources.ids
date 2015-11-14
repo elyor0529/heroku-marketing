@@ -5,312 +5,307 @@
       <identifier-quote-string>&quot;</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
-    <database-model serializer="dbm" rdbms="POSTGRE" format-version="2.1">
+    <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.2">
       <database id="1" name="marketing"/>
       <schema id="2" parent="1" name="public">
         <object-id>2200</object-id>
         <comment>standard public schema</comment>
-        <introspection-state-number>1321</introspection-state-number>
-        <introspection-timestamp>2015-10-06.03:06:57.654</introspection-timestamp>
+        <introspection-state-number>686</introspection-state-number>
+        <introspection-timestamp>2015-11-03.19:20:32.188</introspection-timestamp>
       </schema>
       <sequence id="3" parent="2" name="companies_id_seq">
-        <object-id>16761</object-id>
-        <state-number>1315</state-number>
-        <increment-by>1</increment-by>
+        <object-id>16394</object-id>
+        <state-number>680</state-number>
       </sequence>
       <sequence id="4" parent="2" name="devices_id_seq">
-        <object-id>16773</object-id>
-        <state-number>1317</state-number>
-        <increment-by>1</increment-by>
+        <object-id>16406</object-id>
+        <state-number>682</state-number>
       </sequence>
       <sequence id="5" parent="2" name="news_id_seq">
-        <object-id>16782</object-id>
-        <state-number>1319</state-number>
-        <increment-by>1</increment-by>
+        <object-id>16415</object-id>
+        <state-number>684</state-number>
       </sequence>
       <sequence id="6" parent="2" name="products_id_seq">
-        <object-id>16798</object-id>
-        <state-number>1320</state-number>
-        <increment-by>1</increment-by>
+        <object-id>16431</object-id>
+        <state-number>685</state-number>
       </sequence>
       <sequence id="7" parent="2" name="users_id_seq">
-        <object-id>16814</object-id>
-        <state-number>1321</state-number>
-        <increment-by>1</increment-by>
+        <object-id>16447</object-id>
+        <state-number>686</state-number>
       </sequence>
       <table id="8" parent="2" name="companies">
-        <object-id>16763</object-id>
-        <state-number>1320</state-number>
+        <object-id>16396</object-id>
+        <state-number>685</state-number>
       </table>
       <table id="9" parent="2" name="devices">
-        <object-id>16775</object-id>
-        <state-number>1321</state-number>
+        <object-id>16408</object-id>
+        <state-number>686</state-number>
       </table>
       <table id="10" parent="2" name="news">
-        <object-id>16784</object-id>
-        <state-number>1319</state-number>
+        <object-id>16417</object-id>
+        <state-number>684</state-number>
       </table>
       <table id="11" parent="2" name="products">
-        <object-id>16800</object-id>
-        <state-number>1320</state-number>
+        <object-id>16433</object-id>
+        <state-number>685</state-number>
       </table>
       <table id="12" parent="2" name="users">
-        <object-id>16816</object-id>
-        <state-number>1321</state-number>
+        <object-id>16449</object-id>
+        <state-number>686</state-number>
       </table>
       <column id="13" parent="8" name="id">
-        <state-number>1315</state-number>
+        <state-number>680</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;companies_id_seq&apos;::regclass)</default-expression>
       </column>
       <column id="14" parent="8" name="name">
-        <state-number>1315</state-number>
+        <state-number>680</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(250)</data-type>
       </column>
       <column id="15" parent="8" name="key">
-        <state-number>1315</state-number>
+        <state-number>680</state-number>
         <data-type>varchar(50)</data-type>
       </column>
       <column id="16" parent="8" name="currency">
-        <state-number>1315</state-number>
+        <state-number>680</state-number>
         <mandatory>1</mandatory>
         <data-type>real</data-type>
       </column>
       <column id="17" parent="8" name="logo_url">
-        <state-number>1315</state-number>
+        <state-number>680</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(250)</data-type>
       </column>
       <column id="18" parent="8" name="about">
-        <state-number>1315</state-number>
+        <state-number>680</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar</data-type>
       </column>
       <column id="19" parent="8" name="site_url">
-        <state-number>1315</state-number>
+        <state-number>680</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(250)</data-type>
       </column>
       <column id="20" parent="8" name="privacy_policy">
-        <state-number>1315</state-number>
+        <state-number>680</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar</data-type>
       </column>
       <column id="21" parent="8" name="phone">
-        <state-number>1315</state-number>
+        <state-number>680</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
       <index id="22" parent="8" name="companies_pkey">
-        <object-id>16770</object-id>
+        <object-id>16403</object-id>
         <columns>id</columns>
         <unique>1</unique>
       </index>
       <index id="23" parent="8" name="unique_key">
-        <object-id>16772</object-id>
+        <object-id>16405</object-id>
         <columns>key</columns>
         <unique>1</unique>
       </index>
       <key id="24" parent="8" name="companies_pkey">
         <columns>id</columns>
-        <underlying-index>companies_pkey|id</underlying-index>
+        <underlying-index>companies_pkey</underlying-index>
         <primary>1</primary>
       </key>
       <column id="25" parent="9" name="id">
-        <state-number>1317</state-number>
+        <state-number>682</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;devices_id_seq&apos;::regclass)</default-expression>
       </column>
       <column id="26" parent="9" name="brand">
-        <state-number>1317</state-number>
+        <state-number>682</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
       <column id="27" parent="9" name="model">
-        <state-number>1317</state-number>
+        <state-number>682</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
       <column id="28" parent="9" name="token">
-        <state-number>1317</state-number>
+        <state-number>682</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(250)</data-type>
       </column>
       <column id="29" parent="9" name="company_key">
-        <state-number>1317</state-number>
+        <state-number>682</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
       <column id="30" parent="9" name="unique_id">
-        <state-number>1317</state-number>
+        <state-number>682</state-number>
         <data-type>varchar(50)</data-type>
       </column>
       <index id="31" parent="9" name="devices_pkey">
-        <object-id>16779</object-id>
+        <object-id>16412</object-id>
         <columns>id</columns>
         <unique>1</unique>
       </index>
       <index id="32" parent="9" name="unique_unique_id">
-        <object-id>16781</object-id>
+        <object-id>16414</object-id>
         <columns>unique_id</columns>
         <unique>1</unique>
       </index>
       <key id="33" parent="9" name="devices_pkey">
         <columns>id</columns>
-        <underlying-index>devices_pkey|id</underlying-index>
+        <underlying-index>devices_pkey</underlying-index>
         <primary>1</primary>
       </key>
       <column id="34" parent="10" name="id">
-        <state-number>1319</state-number>
+        <state-number>684</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;news_id_seq&apos;::regclass)</default-expression>
       </column>
       <column id="35" parent="10" name="photo_url">
-        <state-number>1319</state-number>
+        <state-number>684</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(250)</data-type>
       </column>
       <column id="36" parent="10" name="modified_date">
-        <state-number>1319</state-number>
+        <state-number>684</state-number>
         <mandatory>1</mandatory>
         <data-type>timestamp with time zone</data-type>
       </column>
       <column id="37" parent="10" name="created_date">
-        <state-number>1319</state-number>
+        <state-number>684</state-number>
         <mandatory>1</mandatory>
         <data-type>timestamp with time zone</data-type>
       </column>
       <column id="38" parent="10" name="content">
-        <state-number>1319</state-number>
+        <state-number>684</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar</data-type>
       </column>
       <column id="39" parent="10" name="title">
-        <state-number>1319</state-number>
+        <state-number>684</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(250)</data-type>
       </column>
       <column id="40" parent="10" name="company_id">
-        <state-number>1319</state-number>
+        <state-number>684</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
       <index id="41" parent="10" name="news_pkey">
-        <object-id>16791</object-id>
+        <object-id>16424</object-id>
         <columns>id</columns>
         <unique>1</unique>
       </index>
       <key id="42" parent="10" name="news_pkey">
         <columns>id</columns>
-        <underlying-index>news_pkey|id</underlying-index>
+        <underlying-index>news_pkey</underlying-index>
         <primary>1</primary>
       </key>
       <foreign-key id="43" parent="10" name="news_company_id_fkey">
         <columns>company_id</columns>
-        <ref-key>companies.companies_pkey|id</ref-key>
+        <ref-key>companies.companies_pkey</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
       <column id="44" parent="11" name="id">
-        <state-number>1320</state-number>
+        <state-number>685</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;products_id_seq&apos;::regclass)</default-expression>
       </column>
       <column id="45" parent="11" name="photo_url">
-        <state-number>1320</state-number>
+        <state-number>685</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(250)</data-type>
       </column>
       <column id="46" parent="11" name="description">
-        <state-number>1320</state-number>
+        <state-number>685</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar</data-type>
       </column>
       <column id="47" parent="11" name="name">
-        <state-number>1320</state-number>
+        <state-number>685</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
       <column id="48" parent="11" name="mark">
-        <state-number>1320</state-number>
+        <state-number>685</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
       <column id="49" parent="11" name="company_id">
-        <state-number>1320</state-number>
+        <state-number>685</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
       <index id="50" parent="11" name="products_pkey">
-        <object-id>16807</object-id>
+        <object-id>16440</object-id>
         <columns>id</columns>
         <unique>1</unique>
       </index>
       <key id="51" parent="11" name="products_pkey">
         <columns>id</columns>
-        <underlying-index>products_pkey|id</underlying-index>
+        <underlying-index>products_pkey</underlying-index>
         <primary>1</primary>
       </key>
       <foreign-key id="52" parent="11" name="products_company_id_fkey">
         <columns>company_id</columns>
-        <ref-key>companies.companies_pkey|id</ref-key>
+        <ref-key>companies.companies_pkey</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
       <column id="53" parent="12" name="id">
-        <state-number>1321</state-number>
+        <state-number>686</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;users_id_seq&apos;::regclass)</default-expression>
       </column>
       <column id="54" parent="12" name="full_name">
-        <state-number>1321</state-number>
+        <state-number>686</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(250)</data-type>
       </column>
       <column id="55" parent="12" name="email">
-        <state-number>1321</state-number>
+        <state-number>686</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
       <column id="56" parent="12" name="gender">
-        <state-number>1321</state-number>
+        <state-number>686</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(25)</data-type>
       </column>
       <column id="57" parent="12" name="birthday">
-        <state-number>1321</state-number>
+        <state-number>686</state-number>
         <mandatory>1</mandatory>
         <data-type>timestamp with time zone</data-type>
       </column>
       <column id="58" parent="12" name="promotional_code">
-        <state-number>1321</state-number>
+        <state-number>686</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
       <column id="59" parent="12" name="device_id">
-        <state-number>1321</state-number>
+        <state-number>686</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
       <index id="60" parent="12" name="users_pkey">
-        <object-id>16820</object-id>
+        <object-id>16453</object-id>
         <columns>id</columns>
         <unique>1</unique>
       </index>
       <key id="61" parent="12" name="users_pkey">
         <columns>id</columns>
-        <underlying-index>users_pkey|id</underlying-index>
+        <underlying-index>users_pkey</underlying-index>
         <primary>1</primary>
       </key>
       <foreign-key id="62" parent="12" name="users_device_id_fkey">
         <columns>device_id</columns>
-        <ref-key>devices.devices_pkey|id</ref-key>
+        <ref-key>devices.devices_pkey</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
